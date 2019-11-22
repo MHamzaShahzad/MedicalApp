@@ -1,9 +1,11 @@
-package com.example.medicalapp;
+package com.example.medicalapp.activities;
 
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
+import android.media.Ringtone;
 import android.os.Bundle;
+import android.os.Parcelable;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -12,6 +14,8 @@ import android.widget.Toast;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.medicalapp.Constants;
+import com.example.medicalapp.R;
 import com.firebase.ui.auth.AuthUI;
 import com.firebase.ui.auth.IdpResponse;
 import com.google.firebase.auth.FirebaseAuth;
@@ -38,6 +42,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         initLayoutWidgets();
         initProgressDialog();
         initProviders();
+        stopAlarmFromNotification();
     }
 
     private void initProgressDialog() {
@@ -94,18 +99,39 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     private void showProgressDialog() {
-        if (progressDialog != null && !progressDialog.isShowing())
-            progressDialog.show();
+        try {
+            if (progressDialog != null && !progressDialog.isShowing())
+                progressDialog.show();
+        }catch (Exception e){
+            e.printStackTrace();
+        }
     }
 
     private void hideProgressDialog() {
-        if (progressDialog != null && progressDialog.isShowing())
-            progressDialog.dismiss();
+        try {
+            if (progressDialog != null && progressDialog.isShowing())
+                progressDialog.dismiss();
+        }catch (Exception e){
+            e.printStackTrace();
+        }
     }
 
     private void moveToHome() {
         startActivity(new Intent(context, HomeDrawerActivity.class));
         finish();
+    }
+
+    private void stopAlarmFromNotification(){
+        if (getIntent() != null){
+            try {
+                Ringtone ringtone = (Ringtone) getIntent().getParcelableExtra(Constants.STRING_EXTRA_NOTIFICATION_RINGTONE);
+                if (ringtone != null && ringtone.isPlaying()) {
+                    ringtone.stop();
+                }
+            }catch (Exception e){
+                e.printStackTrace();
+            }
+        }
     }
 
     @Override

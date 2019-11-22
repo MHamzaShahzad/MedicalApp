@@ -1,9 +1,15 @@
-package com.example.medicalapp;
+package com.example.medicalapp.activities;
 
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 
+import com.example.medicalapp.Constants;
+import com.example.medicalapp.FragmentContactUs;
+import com.example.medicalapp.FragmentNearbyPlaces;
+import com.example.medicalapp.R;
+import com.example.medicalapp.medicinereminder.activity.MainActivityPillsReminder;
+import com.example.medicalapp.medicinereminder.activity.SplashActivityPillsReminder;
 import com.firebase.ui.auth.AuthUI;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -99,6 +105,8 @@ public class HomeDrawerActivity extends AppCompatActivity
         } else if (id == R.id.nav_gallery) {
 
         } else if (id == R.id.nav_slideshow) {
+
+            startActivity(new Intent(context, SplashActivityPillsReminder.class));
 
         } else if (id == R.id.nav_tools) {
 

@@ -24,11 +24,7 @@
             android:value="@string/google_maps_key" />
 
         <activity
-            android:name=".HomeDrawerActivity"
-            android:label="@string/title_activity_home_drawer"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:name=".SplashActivity"
+            android:name=".activities.SplashActivity"
             android:theme="@style/SplashTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -36,11 +32,54 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MainActivity" />
+
+        <activity android:name=".activities.MainActivity" />
+
+        <activity
+            android:name=".activities.HomeDrawerActivity"
+            android:label="@string/title_activity_home_drawer"
+            android:theme="@style/AppTheme.NoActionBar" />
+
+        <activity
+            android:name=".medicinereminder.activity.SplashActivityPillsReminder"
+            android:parentActivityName=".activities.HomeDrawerActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+
+        <activity
+            android:name=".medicinereminder.activity.MainActivityPillsReminder"
+            android:parentActivityName=".activities.HomeDrawerActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+
+        <activity
+            android:name=".medicinereminder.activity.AddMedicineActivity"
+            android:parentActivityName=".medicinereminder.activity.MainActivityPillsReminder"
+            android:theme="@style/AppTheme.NoActionBar" />
+
+        <activity
+            android:name=".medicinereminder.activity.MedicinePreviewActivity"
+            android:parentActivityName=".medicinereminder.activity.MainActivityPillsReminder"
+            android:theme="@style/AppTheme.NoActionBar" />
+
+        <receiver
+            android:name=".medicinereminder.Class.AlarmReceiver"
+            android:enabled="true"
+            android:exported="true"
+            android:process=":remote">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <action android:name="ac.in.ActivityRecognition.RestartSensor" />
+            </intent-filter>
+        </receiver>
+
+        <service
+            android:name=".medicinereminder.Class.MyService"
+            android:enabled="true"
+            android:exported="true" />
 
         <service
             android:name=".backgroundServices.BackgroundTasksService"
             android:enabled="true" />
+
         <service
             android:name=".backgroundServices.BackgroundTasksJobService"
             android:permission="android.permission.BIND_JOB_SERVICE" />

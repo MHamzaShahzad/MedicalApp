@@ -1,10 +1,12 @@
-package com.example.medicalapp;
+package com.example.medicalapp.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.medicalapp.R;
 
 public class SplashActivity extends AppCompatActivity {
 
