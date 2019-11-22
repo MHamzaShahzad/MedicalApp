@@ -104,21 +104,24 @@ public class HomeDrawerActivity extends AppCompatActivity
 
             SignOut();
 
-        } else if (id == R.id.nav_share) {
-
+        } else if (id == R.id.nav_nearby_hospitals) {
             FragmentNearbyPlaces fragmentNearbyPlaces = new FragmentNearbyPlaces();
             Bundle bundle = new Bundle();
             bundle.putString(Constants.STRING_ARGUE_NEARBY_ENTITY, "hospital");
             fragmentNearbyPlaces.setArguments(bundle);
             getSupportFragmentManager().beginTransaction().add(android.R.id.content, fragmentNearbyPlaces).addToBackStack(null).commit();
 
-        } else if (id == R.id.nav_send) {
+        } else if (id == R.id.nav_nearby_pharmacies) {
             FragmentNearbyPlaces fragmentNearbyPlaces = new FragmentNearbyPlaces();
             Bundle bundle = new Bundle();
             bundle.putString(Constants.STRING_ARGUE_NEARBY_ENTITY, "pharmacy");
             fragmentNearbyPlaces.setArguments(bundle);
             getSupportFragmentManager().beginTransaction().add(android.R.id.content, fragmentNearbyPlaces).addToBackStack(null).commit();
 
+        } else if (id == R.id.nav_about_us) {
+
+        } else if (id == R.id.nav_contact_us) {
+            FragmentContactUs.newInstance().show(getSupportFragmentManager(), "Contact Us");
         }
 
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
@@ -126,19 +129,21 @@ public class HomeDrawerActivity extends AppCompatActivity
         return true;
     }
 
-    private void SignOut(){
+    private void SignOut() {
         AuthUI.getInstance().signOut(context).addOnCompleteListener(new OnCompleteListener<Void>() {
             @Override
             public void onComplete(@NonNull Task<Void> task) {
-                if (task.isSuccessful()){
+                if (task.isSuccessful()) {
                     moveToMain();
                 }
             }
         });
     }
 
-    private void moveToMain(){
+    private void moveToMain() {
         startActivity(new Intent(context, MainActivity.class));
         finish();
     }
+
+
 }

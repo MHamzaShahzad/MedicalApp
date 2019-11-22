@@ -11,14 +11,17 @@ import java.util.HashMap;
 import java.util.List;
 
 public class DataParser {
+
     public List<HashMap<String, String>> parse(String jsonData) {
         JSONArray jsonArray = null;
         JSONObject jsonObject;
 
         try {
+
             Log.d("Places", "parse");
             jsonObject = new JSONObject((String) jsonData);
             jsonArray = jsonObject.getJSONArray("results");
+
         } catch (JSONException e) {
             Log.d("Places", "parse error");
             e.printStackTrace();
