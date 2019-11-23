@@ -14,19 +14,19 @@
             android:title="@string/menu_gallery" />
         <item
             android:id="@+id/nav_slideshow"
-            android:icon="@drawable/ic_menu_slideshow"
-            android:title="@string/menu_slideshow" />
+            android:icon="@drawable/ic_notifications_black_24dp"
+            android:title="@string/menu_medicine_reminder" />
         <item
             android:id="@+id/nav_tools"
-            android:icon="@drawable/ic_menu_manage"
-            android:title="@string/menu_tools" />
+            android:icon="@drawable/ic_exit_to_app_black_24dp"
+            android:title="@string/menu_logout" />
         <item
             android:id="@+id/nav_nearby_hospitals"
-            android:icon="@drawable/ic_menu_manage"
+            android:icon="@drawable/ic_local_hospital_black_24dp"
             android:title="@string/menu_nearby_hospitals" />
         <item
             android:id="@+id/nav_nearby_pharmacies"
-            android:icon="@drawable/ic_menu_manage"
+            android:icon="@drawable/ic_local_pharmacy_black_24dp"
             android:title="@string/menu_nearby_pharmacies" />
     </group>
 

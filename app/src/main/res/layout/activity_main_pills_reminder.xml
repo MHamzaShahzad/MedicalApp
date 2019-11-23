@@ -13,7 +13,7 @@
         android:theme="@style/MyToolbarStyle"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
-        android:background="@color/colorAccent"
+        android:background="@color/colorPrimary"
         app:popupTheme="@style/Theme.AppCompat.NoActionBar">
 
         <LinearLayout
@@ -55,9 +55,9 @@
         android:id="@+id/calendarView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#cfd8dc"
-        app:textColorNormal="@color/gray"
-        app:textColorSelected="@color/blue"
+        android:background="@color/blue"
+        app:textColorNormal="@color/WHITE"
+        app:textColorSelected="@color/meColor"
         app:textSizeDayName="12sp"
         app:textSizeDayNumber="14sp"
         app:textSizeMonthName="12sp" />
@@ -65,7 +65,8 @@
     <TextView
         android:id="@+id/Time"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:textColor="@color/black2"/>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/MedicineRV"

@@ -11,13 +11,14 @@
     <androidx.cardview.widget.CardView
         android:id="@+id/MedicineCV"
         android:layout_width="wrap_content"
-        android:layout_height="35dp"
+        android:layout_height="40dp"
         android:layout_gravity="center"
         android:layout_marginLeft="2dp"
         android:layout_marginRight="2dp"
+        android:padding="10dp"
         android:foregroundGravity="center"
         android:minWidth="150dp"
-        app:cardBackgroundColor="@color/meColor">
+        app:cardBackgroundColor="@color/colorPrimary">
 
         <TextView
             android:id="@+id/MedicineName"
@@ -25,7 +26,8 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:textColor="@color/black2"
-            android:textSize="16sp" />
+            android:textSize="16sp"
+            android:padding="3dp"/>
 
     </androidx.cardview.widget.CardView>
 

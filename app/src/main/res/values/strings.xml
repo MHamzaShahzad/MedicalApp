@@ -10,8 +10,8 @@
 
     <string name="menu_home">Home</string>
     <string name="menu_gallery">Gallery</string>
-    <string name="menu_slideshow">Slideshow</string>
-    <string name="menu_tools">Tools</string>
+    <string name="menu_medicine_reminder">Medicine Reminder</string>
+    <string name="menu_logout">Logout</string>
     <string name="menu_nearby_hospitals">Nearby Hospitals</string>
     <string name="menu_nearby_pharmacies">Nearby Pharmacies</string>
     <string name="menu_share">Share</string>
@@ -37,7 +37,7 @@
     <string name="duration_days">Duration(days)</string>
     <string name="_0">0</string>
     <string name="plus">+</string>
-    <string name="medicine_type">Medicine Type</string>
+    <string name="medicine_type">Select Medicine Type</string>
     <string name="no_medicine_found">No medicine found</string>
     <string name="medicine_dashboard">Medicine Dashboard</string>
     <string name="update">Update</string>
@@ -47,12 +47,14 @@
     <string name="taken">Taken</string>
     <string name="all_medicine">All medicine</string>
     <string name="period_tracker">Period Tracker</string>
-    <string-array name="schedule_arrays">
+    <string-array name="schedule_arrays" >
         <item>Once a day</item>
         <item>Twice a day</item>
         <item>3 times a day</item>
         <item>4 times a day</item>
         <item>5 times per day</item>
+
+
 
     </string-array>
     <string-array name="take_arrays">

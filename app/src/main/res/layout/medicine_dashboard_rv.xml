@@ -5,23 +5,27 @@
     android:layout_marginBottom="3dp"
     android:layout_marginLeft="2dp"
     android:layout_marginRight="2dp"
+    android:layout_marginTop="5dp"
     android:orientation="vertical">
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/colorAccent">
+        >
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="40dp"
-            android:background="@color/blue"
             android:orientation="horizontal">
 
             <LinearLayout
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="5">
+                android:layout_weight="5"
+                android:background="@color/blue"
+                android:layout_marginRight="5dp"
+                android:layout_marginLeft="5dp"
+                >
 
                 <TextView
                     android:id="@+id/MedicineNameTV"
@@ -30,7 +34,8 @@
                     android:layout_marginStart="10dp"
                     android:gravity="center"
                     android:textColor="@color/WHITE"
-                    android:textSize="20sp" />
+                    android:textSize="20sp"
+                    />
 
             </LinearLayout>
 
@@ -39,7 +44,10 @@
                 android:layout_height="match_parent"
                 android:layout_marginEnd="5dp"
                 android:layout_weight="1.5"
-                android:gravity="center">
+                android:gravity="center"
+                android:background="@color/colorPrimary"
+                android:layout_marginLeft="5dp"
+                >
 
                 <TextView
                     android:id="@+id/UpateTV"
@@ -49,7 +57,8 @@
                     android:text="@string/update"
                     android:textAllCaps="false"
                     android:textColor="@color/WHITE"
-                    android:textSize="14sp" />
+                    android:textSize="14sp"
+                    />
 
             </LinearLayout>
 
@@ -58,11 +67,12 @@
                 android:layout_height="match_parent"
                 android:layout_marginEnd="5dp"
                 android:layout_weight="1.5"
-                android:gravity="center">
+                android:gravity="center"
+                android:background="@color/colorPrimary"
+                >
 
                 <TextView
                     android:id="@+id/DeleteTV"
-
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center"
