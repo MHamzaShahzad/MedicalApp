@@ -18,6 +18,7 @@
     <string name="menu_send">Send</string>
     <string name="menu_contact_us">Contact Us</string>
     <string name="menu_about_us">About Us</string>
+    <string name="menu_emergency">Emergency Training</string>
 
     <string name="title">Medicine Reminder</string>
     <string name="managemedicine">Manage Medicine</string>
@@ -47,13 +48,14 @@
     <string name="taken">Taken</string>
     <string name="all_medicine">All medicine</string>
     <string name="period_tracker">Period Tracker</string>
-    <string-array name="schedule_arrays" >
+
+    <string name="contact_us_detail">Medical Assistance\n is the solution for the emergency situations and provides valuable features that help to handle the emergency conditions and to communicate the doctor for the routine checkup.</string>
+    <string-array name="schedule_arrays">
         <item>Once a day</item>
         <item>Twice a day</item>
         <item>3 times a day</item>
         <item>4 times a day</item>
         <item>5 times per day</item>
-
 
 
     </string-array>

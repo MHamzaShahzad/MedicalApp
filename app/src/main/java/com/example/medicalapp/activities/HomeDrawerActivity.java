@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 
 import com.example.medicalapp.Constants;
+import com.example.medicalapp.FirstAidFragment;
 import com.example.medicalapp.FragmentContactUs;
 import com.example.medicalapp.FragmentNearbyPlaces;
 import com.example.medicalapp.R;
@@ -29,6 +30,7 @@ import androidx.drawerlayout.widget.DrawerLayout;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.fragment.app.FragmentManager;
 
 import android.view.Menu;
 
@@ -102,6 +104,11 @@ public class HomeDrawerActivity extends AppCompatActivity
         if (id == R.id.nav_home) {
             // Handle the camera action
         } else if (id == R.id.nav_gallery) {
+            FirstAidFragment firstAidFragment = new FirstAidFragment();
+            Bundle bundle = new Bundle();
+            firstAidFragment.setArguments(bundle);
+            getSupportFragmentManager().beginTransaction().add(android.R.id.content, firstAidFragment).addToBackStack(null).commit();
+
 
         } else if (id == R.id.nav_slideshow) {
 
@@ -125,9 +132,7 @@ public class HomeDrawerActivity extends AppCompatActivity
             fragmentNearbyPlaces.setArguments(bundle);
             getSupportFragmentManager().beginTransaction().add(android.R.id.content, fragmentNearbyPlaces).addToBackStack(null).commit();
 
-        } else if (id == R.id.nav_about_us) {
-
-        } else if (id == R.id.nav_contact_us) {
+        }  else if (id == R.id.nav_contact_us) {
             FragmentContactUs.newInstance().show(getSupportFragmentManager(), "Contact Us");
         }
 

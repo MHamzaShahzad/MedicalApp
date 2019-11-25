@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tool="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gradient_animation"
+    tools:context=".FirstAidFragment">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp"
+                android:fontFamily="sans-serif-condensed-medium"
+                android:text="Emergency Response Training"
+                android:textAlignment="center"
+                android:textColor="#F56E6E"
+                android:textSize="27sp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/logo"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_below="@+id/title"
+                android:layout_centerInParent="true"
+                android:src="@drawable/firstaid" />
+
+            <TextView
+                android:id="@+id/tag"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/logo"
+                android:layout_marginTop="5dp"
+                android:text="Emergency response training focuses on developing the critical skills needed to survive an emergency. These training programs teach individuals a range of response procedures including building evacuations, shelter-in-place, and active threat survival."
+                android:textAlignment="center"
+                android:textColor="@color/WHITE"
+                android:textSize="17sp" />
+
+            <View
+                android:id="@+id/view1"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_below="@id/tag"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginRight="5dp"
+                android:background="@color/WHITE" />
+
+            <TextView
+                android:id="@+id/cpr"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/view1"
+                android:layout_marginLeft="10dp"
+                android:text="CPR :"
+                android:textColor="@color/Red"
+                android:textSize="27sp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/gif1"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_below="@id/cpr"
+                android:layout_centerInParent="true"
+                android:src="@drawable/cprnew" />
+
+            <TextView
+                android:id="@+id/cpr_detail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/gif1"
+                android:layout_margin="5dp"
+                android:text="CPR – or Cardiopulmonary Resuscitation – is an emergency lifesaving procedure performed when the heart stops beating. Immediate CPR can double or triple chances of survival after cardiac arrest."
+                android:textColor="@color/WHITE"
+                android:textSize="17sp" />
+
+            <View
+                android:id="@+id/view2"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_below="@id/cpr_detail"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginRight="5dp"
+                android:background="@color/WHITE" />
+
+            <TextView
+                android:id="@+id/cut_care"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/view2"
+                android:layout_marginLeft="10dp"
+                android:text="Proper cut care :"
+                android:textColor="@color/Red"
+                android:textSize="27sp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/cut_care1"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_below="@id/cut_care"
+                android:layout_centerInParent="true"
+                android:src="@drawable/cutcare" />
+
+            <TextView
+                android:id="@+id/cut_detail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/cut_care1"
+                android:layout_margin="5dp"
+                android:text="There are many ways to cut your finger, there is only one “best” way to care for it.\n1.Control bleeding\n2.Clean the wound\n3.Close the wound"
+                android:textColor="@color/WHITE"
+                android:textSize="17sp" />
+
+            <View
+                android:id="@+id/view3"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_below="@id/cut_detail"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginRight="5dp"
+                android:background="@color/WHITE" />
+
+            <TextView
+                android:id="@+id/head"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/view3"
+                android:layout_marginLeft="10dp"
+                android:text="Head injury :"
+                android:textColor="@color/Red"
+                android:textSize="27sp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/head_injury_image"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_below="@id/head"
+                android:layout_centerInParent="true"
+                android:src="@drawable/headinjury" />
+
+            <TextView
+                android:id="@+id/head_injury_detail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/head_injury_image"
+                android:layout_margin="5dp"
+                android:text="1. Very carefully, try to put any flaps of skin back into position.\n2. Press firmly on the wound with a clean pad (sterile if possible).\n3. Hold the dressing in place with more clean cloth.
+head injury\n4. If victim is conscious, lay him/her down with the head and shoulders raised
+slightly.\n5. If fluid trickles from the ear, cover the ear with a clean pad and lay him/her
+on that side to allow free drainage of the fluid from the ear.\n6. Seek medical help immediately."
+                android:textColor="@color/WHITE"
+                android:textSize="17sp" />
+
+            <View
+                android:id="@+id/view4"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_below="@id/head_injury_detail"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginRight="5dp"
+                android:background="@color/WHITE" />
+
+            <TextView
+                android:id="@+id/burn_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/view4"
+                android:layout_marginLeft="10dp"
+                android:text="Scalds and Burns :"
+                android:textColor="@color/Red"
+                android:textSize="27sp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/burn_image"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_below="@id/burn_title"
+                android:layout_centerInParent="true"
+                android:src="@drawable/burn" />
+
+            <TextView
+                android:id="@+id/burn_detail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/burn_image"
+                android:layout_margin="5dp"
+                android:text="1.Treat the burn under cool running water for 20 minutes.\n2.If the burn is large, stop cooling it after 20 minutes. Keep your child warm because hypothermia can happen quickly in children.\3.Cover the burn with a loose, light, non-sticky dressing like cling film or a zip lock bag. Raise burned limbs to reduce swelling and pain."
+                android:textColor="@color/WHITE"
+                android:textSize="17sp" />
+
+            <View
+                android:id="@+id/view5"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_below="@id/burn_detail"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginRight="5dp"
+                android:background="@color/WHITE" />
+
+            <TextView
+                android:id="@+id/nose_bleeding_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/view5"
+                android:layout_marginLeft="10dp"
+                android:text="Nose Bleeding :"
+                android:textColor="@color/Red"
+                android:textSize="27sp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/nose_bleed_image"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_below="@id/nose_bleeding_title"
+                android:layout_centerInParent="true"
+                android:src="@drawable/nosebleeding" />
+
+            <TextView
+                android:id="@+id/nose_bleed_detail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/nose_bleed_image"
+                android:layout_margin="5dp"
+                android:layout_marginBottom="10dp"
+                android:text="1.sit down and firmly pinch the soft part of your nose, just above your nostrils, for at least 10-15 minutes.\n2.lean forward and breathe through your mouth.\3.place an ice pack or bag of frozen vegetables covered by a towel on the bridge of your nose.\n4.stay upright, rather than lying down as this reduces the blood pressure in the blood vessels of your nose and will discourage further bleeding."
+                android:textColor="@color/WHITE"
+                android:textSize="17sp" />
+
+
+        </RelativeLayout>
+    </ScrollView>
+</RelativeLayout>

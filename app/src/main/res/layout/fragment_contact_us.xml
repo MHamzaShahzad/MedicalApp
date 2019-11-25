@@ -34,17 +34,18 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/title"
                 android:layout_margin="5dp"
-                android:text="Feedback is the breakfast of champions.\nFor any query or assistance contact us!"
+                android:text="@string/contact_us_detail"
                 android:textAlignment="center"
                 android:textColor="@color/WHITE"
-                android:textSize="22sp"
+                android:textSize="20sp"
                 android:layout_marginTop="30dp"
                 android:textStyle="bold" />
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_centerInParent="true"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                android:layout_below="@+id/title2"
+                android:layout_marginTop="10dp">
 
 
             <EditText
@@ -59,6 +60,7 @@
                 android:padding="10dp"
                 android:background="@color/colorPrimary"
                 android:layout_margin="5dp"
+                android:layout_marginTop="5dp"
                 />
                 <Button
                     android:id="@+id/btnSubmitFeedBack"
