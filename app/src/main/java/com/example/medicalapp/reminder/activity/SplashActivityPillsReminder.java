@@ -1,10 +1,9 @@
-package com.example.medicalapp.medicinereminder.activity;
+package com.example.medicalapp.reminder.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;

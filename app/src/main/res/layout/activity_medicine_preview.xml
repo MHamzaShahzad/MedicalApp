@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".medicinereminder.activity.MedicinePreviewActivity">
+    tools:context=".reminder.activity.MedicinePreviewActivity">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/Toolbar"

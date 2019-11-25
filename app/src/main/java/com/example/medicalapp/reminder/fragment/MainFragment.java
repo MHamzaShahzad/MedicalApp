@@ -1,4 +1,4 @@
-package com.example.medicalapp.medicinereminder.fragment;
+package com.example.medicalapp.reminder.fragment;
 
 import android.content.Context;
 import android.content.Intent;
@@ -14,11 +14,11 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.medicalapp.R;
-import com.example.medicalapp.medicinereminder.Class.Medicine;
-import com.example.medicalapp.medicinereminder.Class.MedicinePerRow;
-import com.example.medicalapp.medicinereminder.activity.AddMedicineActivity;
-import com.example.medicalapp.medicinereminder.adapter.MedicineByDateAdapter;
-import com.example.medicalapp.medicinereminder.database.MedicineManagementDatabase;
+import com.example.medicalapp.reminder.Class.Medicine;
+import com.example.medicalapp.reminder.Class.MedicinePerRow;
+import com.example.medicalapp.reminder.activity.AddMedicineActivity;
+import com.example.medicalapp.reminder.adapter.MedicineByDateAdapter;
+import com.example.medicalapp.reminder.database.MedicineManagementDatabase;
 
 import java.util.ArrayList;
 import java.util.Collections;

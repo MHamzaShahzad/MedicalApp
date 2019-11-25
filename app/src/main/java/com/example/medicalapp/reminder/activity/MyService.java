@@ -1,4 +1,4 @@
-package com.example.medicalapp.medicinereminder.activity;
+package com.example.medicalapp.reminder.activity;
 
 import android.app.PendingIntent;
 import android.app.Service;

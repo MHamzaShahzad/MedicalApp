@@ -1,4 +1,4 @@
-package com.example.medicalapp.medicinereminder.activity;
+package com.example.medicalapp.reminder.activity;
 
 import android.os.Bundle;
 import android.view.View;
@@ -9,7 +9,7 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 import com.example.medicalapp.R;
-import com.example.medicalapp.medicinereminder.fragment.MedicineDashboardFragment;
+import com.example.medicalapp.reminder.fragment.MedicineDashboardFragment;
 
 
 public class MedicinePreviewActivity extends AppCompatActivity {

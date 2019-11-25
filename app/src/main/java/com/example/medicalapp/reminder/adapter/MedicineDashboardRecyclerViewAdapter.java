@@ -1,4 +1,4 @@
-package com.example.medicalapp.medicinereminder.adapter;
+package com.example.medicalapp.reminder.adapter;
 
 import android.app.AlertDialog;
 import android.content.Context;
@@ -13,9 +13,9 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.medicalapp.R;
-import com.example.medicalapp.medicinereminder.Class.CustomDialogClass;
-import com.example.medicalapp.medicinereminder.Class.Medicine;
-import com.example.medicalapp.medicinereminder.database.MedicineManagementDatabase;
+import com.example.medicalapp.reminder.Class.CustomDialogClass;
+import com.example.medicalapp.reminder.Class.Medicine;
+import com.example.medicalapp.reminder.database.MedicineManagementDatabase;
 
 import java.util.ArrayList;
 

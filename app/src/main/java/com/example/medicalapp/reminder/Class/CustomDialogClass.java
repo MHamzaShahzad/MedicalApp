@@ -1,4 +1,4 @@
-package com.example.medicalapp.medicinereminder.Class;
+package com.example.medicalapp.reminder.Class;
 
 import android.app.Dialog;
 import android.content.Context;
@@ -15,8 +15,8 @@ import android.widget.SpinnerAdapter;
 import android.widget.Toast;
 
 import com.example.medicalapp.R;
-import com.example.medicalapp.medicinereminder.activity.MedicinePreviewActivity;
-import com.example.medicalapp.medicinereminder.database.MedicineManagementDatabase;
+import com.example.medicalapp.reminder.activity.MedicinePreviewActivity;
+import com.example.medicalapp.reminder.database.MedicineManagementDatabase;
 
 
 public class CustomDialogClass extends Dialog implements android.view.View.OnClickListener {

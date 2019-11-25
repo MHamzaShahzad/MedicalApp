@@ -1,4 +1,4 @@
-package com.example.medicalapp.medicinereminder.adapter;
+package com.example.medicalapp.reminder.adapter;
 
 import android.annotation.SuppressLint;
 import android.app.AlertDialog;
@@ -20,9 +20,9 @@ import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.medicalapp.R;
-import com.example.medicalapp.medicinereminder.Class.Medicine;
-import com.example.medicalapp.medicinereminder.Class.MedicinePerRow;
-import com.example.medicalapp.medicinereminder.database.MedicineManagementDatabase;
+import com.example.medicalapp.reminder.Class.Medicine;
+import com.example.medicalapp.reminder.Class.MedicinePerRow;
+import com.example.medicalapp.reminder.database.MedicineManagementDatabase;
 
 import java.util.ArrayList;
 import java.util.Calendar;

@@ -41,27 +41,27 @@
             android:theme="@style/AppTheme.NoActionBar" />
 
         <activity
-            android:name=".medicinereminder.activity.SplashActivityPillsReminder"
+            android:name=".reminder.activity.SplashActivityPillsReminder"
             android:parentActivityName=".activities.HomeDrawerActivity"
             android:theme="@style/AppTheme.NoActionBar" />
 
         <activity
-            android:name=".medicinereminder.activity.MainActivityPillsReminder"
+            android:name=".reminder.activity.MainActivityPillsReminder"
             android:parentActivityName=".activities.HomeDrawerActivity"
             android:theme="@style/AppTheme.NoActionBar" />
 
         <activity
-            android:name=".medicinereminder.activity.AddMedicineActivity"
-            android:parentActivityName=".medicinereminder.activity.MainActivityPillsReminder"
+            android:name=".reminder.activity.AddMedicineActivity"
+            android:parentActivityName=".reminder.activity.MainActivityPillsReminder"
             android:theme="@style/AppTheme.NoActionBar" />
 
         <activity
-            android:name=".medicinereminder.activity.MedicinePreviewActivity"
-            android:parentActivityName=".medicinereminder.activity.MainActivityPillsReminder"
+            android:name=".reminder.activity.MedicinePreviewActivity"
+            android:parentActivityName=".reminder.activity.MainActivityPillsReminder"
             android:theme="@style/AppTheme.NoActionBar" />
 
         <receiver
-            android:name=".medicinereminder.Class.AlarmReceiver"
+            android:name=".reminder.Class.AlarmReceiver"
             android:enabled="true"
             android:exported="true"
             android:process=":remote">
@@ -72,7 +72,7 @@
         </receiver>
 
         <service
-            android:name=".medicinereminder.Class.MyService"
+            android:name=".reminder.Class.MyService"
             android:enabled="true"
             android:exported="true" />
 

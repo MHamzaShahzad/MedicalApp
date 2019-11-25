@@ -1,4 +1,4 @@
-package com.example.medicalapp.medicinereminder.Class;
+package com.example.medicalapp.reminder.Class;
 
 /**
  * Created by Shipon on 8/21/2018.

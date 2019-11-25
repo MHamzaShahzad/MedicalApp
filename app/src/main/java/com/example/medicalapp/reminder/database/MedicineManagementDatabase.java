@@ -1,12 +1,12 @@
-package com.example.medicalapp.medicinereminder.database;
+package com.example.medicalapp.reminder.database;
 
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
-import com.example.medicalapp.medicinereminder.Class.Medicine;
-import com.example.medicalapp.medicinereminder.Class.MedicinePerRow;
+import com.example.medicalapp.reminder.Class.Medicine;
+import com.example.medicalapp.reminder.Class.MedicinePerRow;
 
 import java.util.ArrayList;
 import java.util.Calendar;

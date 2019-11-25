@@ -1,4 +1,4 @@
-package com.example.medicalapp.medicinereminder.database;
+package com.example.medicalapp.reminder.database;
 
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;

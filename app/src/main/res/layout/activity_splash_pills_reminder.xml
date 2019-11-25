@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:background="@color/blue"
     android:gravity="center"
-    tools:context=".medicinereminder.activity.SplashActivityPillsReminder">
+    tools:context=".reminder.activity.SplashActivityPillsReminder">
 
     <TextView
         android:id="@+id/sp"

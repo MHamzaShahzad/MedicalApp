@@ -1,4 +1,4 @@
-package com.example.medicalapp.medicinereminder.activity;
+package com.example.medicalapp.reminder.activity;
 
 import android.app.ActivityManager;
 import android.app.AlarmManager;
@@ -27,12 +27,12 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.medicalapp.R;
-import com.example.medicalapp.medicinereminder.Class.AlarmReceiver;
-import com.example.medicalapp.medicinereminder.Class.Medicine;
-import com.example.medicalapp.medicinereminder.Class.MedicinePerRow;
-import com.example.medicalapp.medicinereminder.adapter.MyRecyclerViewAdapter;
-import com.example.medicalapp.medicinereminder.database.MedicineManagementDatabase;
-import com.example.medicalapp.medicinereminder.fragment.MainFragment;
+import com.example.medicalapp.reminder.Class.AlarmReceiver;
+import com.example.medicalapp.reminder.Class.Medicine;
+import com.example.medicalapp.reminder.Class.MedicinePerRow;
+import com.example.medicalapp.reminder.adapter.MyRecyclerViewAdapter;
+import com.example.medicalapp.reminder.database.MedicineManagementDatabase;
+import com.example.medicalapp.reminder.fragment.MainFragment;
 
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -41,7 +41,7 @@ import java.util.Date;
 import devs.mulham.horizontalcalendar.HorizontalCalendar;
 import devs.mulham.horizontalcalendar.HorizontalCalendarListener;
 
-import static com.example.medicalapp.medicinereminder.adapter.MyRecyclerViewAdapter.MNAME;
+import static com.example.medicalapp.reminder.adapter.MyRecyclerViewAdapter.MNAME;
 
 
 public class MainActivityPillsReminder extends AppCompatActivity implements MainFragment.OnFragmentInteractionListener, MyRecyclerViewAdapter.ItemClickListener {

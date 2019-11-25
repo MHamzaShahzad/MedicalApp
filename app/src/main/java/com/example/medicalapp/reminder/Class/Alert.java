@@ -1,4 +1,4 @@
-package com.example.medicalapp.medicinereminder.Class;
+package com.example.medicalapp.reminder.Class;
 
 import android.app.Activity;
 import android.media.MediaPlayer;

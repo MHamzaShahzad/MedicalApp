@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@color/blue"
     android:orientation="vertical"
-    tools:context=".medicinereminder.activity.AddMedicineActivity">
+    tools:context=".reminder.activity.AddMedicineActivity">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/Toolbar"

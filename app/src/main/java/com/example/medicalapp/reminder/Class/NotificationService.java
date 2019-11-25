@@ -1,4 +1,4 @@
-package com.example.medicalapp.medicinereminder.Class;
+package com.example.medicalapp.reminder.Class;
 
 import android.app.Service;
 import android.content.Intent;

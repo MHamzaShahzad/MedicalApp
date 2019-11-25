@@ -1,4 +1,4 @@
-package com.example.medicalapp.medicinereminder.adapter;
+package com.example.medicalapp.reminder.adapter;
 
 import android.app.TimePickerDialog;
 import android.content.Context;
@@ -14,12 +14,12 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.medicalapp.R;
-import com.example.medicalapp.medicinereminder.Class.TakenTime;
+import com.example.medicalapp.reminder.Class.TakenTime;
 
 import java.util.ArrayList;
 import java.util.Calendar;
 
-import static com.example.medicalapp.medicinereminder.activity.AddMedicineActivity.takenTime;
+import static com.example.medicalapp.reminder.activity.AddMedicineActivity.takenTime;
 
 
 public class ScheduleRecyclerViewAdapter extends RecyclerView.Adapter<ScheduleRecyclerViewAdapter.ViewHolder> {

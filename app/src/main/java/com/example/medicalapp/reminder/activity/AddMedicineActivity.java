@@ -1,4 +1,4 @@
-package com.example.medicalapp.medicinereminder.activity;
+package com.example.medicalapp.reminder.activity;
 
 import android.app.DatePickerDialog;
 import android.graphics.Color;
@@ -22,10 +22,10 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.medicalapp.R;
-import com.example.medicalapp.medicinereminder.Class.Medicine;
-import com.example.medicalapp.medicinereminder.Class.TakenTime;
-import com.example.medicalapp.medicinereminder.adapter.ScheduleRecyclerViewAdapter;
-import com.example.medicalapp.medicinereminder.database.MedicineManagementDatabase;
+import com.example.medicalapp.reminder.Class.Medicine;
+import com.example.medicalapp.reminder.Class.TakenTime;
+import com.example.medicalapp.reminder.adapter.ScheduleRecyclerViewAdapter;
+import com.example.medicalapp.reminder.database.MedicineManagementDatabase;
 
 import java.util.ArrayList;
 import java.util.Calendar;

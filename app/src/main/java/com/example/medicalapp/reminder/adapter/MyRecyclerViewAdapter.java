@@ -1,4 +1,4 @@
-package com.example.medicalapp.medicinereminder.adapter;
+package com.example.medicalapp.reminder.adapter;
 
 import android.content.Context;
 import android.graphics.Color;
