@@ -8,17 +8,17 @@
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
 
-    <string name="menu_home">Home</string>
-    <string name="menu_gallery">Gallery</string>
     <string name="menu_medicine_reminder">Medicine Reminder</string>
-    <string name="menu_logout">Logout</string>
+    <string name="menu_share_location">Share Location</string>
+    <string name="menu_medicine_inventory">Medicine Inventory</string>
     <string name="menu_nearby_hospitals">Nearby Hospitals</string>
     <string name="menu_nearby_pharmacies">Nearby Pharmacies</string>
-    <string name="menu_share">Share</string>
-    <string name="menu_send">Send</string>
-    <string name="menu_contact_us">Contact Us</string>
-    <string name="menu_about_us">About Us</string>
     <string name="menu_emergency">Emergency Training</string>
+
+    <string name="action_home">Home</string>
+    <string name="action_contact_us">Contact Us</string>
+    <string name="action_about_us">About Us</string>
+    <string name="action_logout">Logout</string>
 
     <string name="title">Medicine Reminder</string>
     <string name="managemedicine">Manage Medicine</string>

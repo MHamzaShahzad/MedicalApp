@@ -23,6 +23,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
+import com.example.medicalapp.interfaces.FragmentInteractionListenerInterface;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.location.LocationListener;
@@ -62,6 +63,9 @@ public class FragmentNearbyPlaces extends Fragment implements OnMapReadyCallback
     Marker mCurrLocationMarker;
     LocationRequest mLocationRequest;
 
+    private FragmentInteractionListenerInterface mListener;
+
+
     public FragmentNearbyPlaces() {
         // Required empty public constructor
     }
@@ -71,6 +75,8 @@ public class FragmentNearbyPlaces extends Fragment implements OnMapReadyCallback
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         context = container.getContext();
+        if (mListener != null)
+            mListener.onFragmentInteraction(FragmentNearbyPlaces.this.getTag());
         // Inflate the layout for this fragment
         if (view == null) {
             view = inflater.inflate(R.layout.fragment_nearby_places, container, false);
@@ -284,6 +290,29 @@ public class FragmentNearbyPlaces extends Fragment implements OnMapReadyCallback
         GetNearbyPlacesData getNearbyPlacesData = new GetNearbyPlacesData();
         getNearbyPlacesData.execute(DataTransfer);
         Toast.makeText(context, "Nearby " + nearbyEntity, Toast.LENGTH_LONG).show();
+    }
+
+    @Override
+    public void onAttach(Activity activity) {
+        super.onAttach(activity);
+        try {
+            mListener = (FragmentInteractionListenerInterface) activity;
+        } catch (ClassCastException e) {
+            throw new ClassCastException(activity.toString() + "must implement FragmentInteractionListenerInterface.");
+        }
+    }
+
+    @Override
+    public void onDetach() {
+        super.onDetach();
+        mListener = null;
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        if (mListener != null)
+            mListener.onFragmentInteraction(FragmentNearbyPlaces.this.getTag());
     }
 
 }
