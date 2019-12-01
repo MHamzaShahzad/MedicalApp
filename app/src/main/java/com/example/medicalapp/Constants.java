@@ -15,4 +15,5 @@ public class Constants {
     public static final String TITLE_NEARBY_PHARMACIES = "Nearby Pharmacies";
     public static final String TITLE_HOME = "Home";
     public static final String TITLE_FIRST_AID = "Emergency Training";
+    public static final String MED_INVENTORY_OBJ = "med_inventory_obj";
 }

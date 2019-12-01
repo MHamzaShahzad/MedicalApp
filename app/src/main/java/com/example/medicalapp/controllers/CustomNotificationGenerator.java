@@ -1,4 +1,4 @@
-package com.example.medicalapp;
+package com.example.medicalapp.controllers;
 
 import android.annotation.SuppressLint;
 import android.app.NotificationChannel;
@@ -9,7 +9,6 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.media.Ringtone;
 import android.media.RingtoneManager;
 import android.net.Uri;
 import android.os.Build;
@@ -20,6 +19,7 @@ import android.util.Log;
 import androidx.core.app.NotificationCompat;
 import androidx.core.app.NotificationManagerCompat;
 
+import com.example.medicalapp.R;
 import com.example.medicalapp.async.AsyncClassTotalNotifs;
 
 public class CustomNotificationGenerator {

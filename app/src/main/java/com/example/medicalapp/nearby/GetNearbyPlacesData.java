@@ -1,4 +1,4 @@
-package com.example.medicalapp;
+package com.example.medicalapp.nearby;
 
 import android.os.AsyncTask;
 import android.util.Log;

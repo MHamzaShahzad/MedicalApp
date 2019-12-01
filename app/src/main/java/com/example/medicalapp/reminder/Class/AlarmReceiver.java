@@ -11,7 +11,7 @@ import android.net.Uri;
 import android.os.Build;
 import android.view.WindowManager;
 
-import com.example.medicalapp.CustomNotificationGenerator;
+import com.example.medicalapp.controllers.CustomNotificationGenerator;
 
 public class AlarmReceiver extends BroadcastReceiver {
     Uri alarmTone = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_ALARM);

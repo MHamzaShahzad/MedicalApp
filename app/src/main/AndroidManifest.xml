@@ -19,6 +19,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
+        <activity android:name=".inventory.MedInventoryMainActivity" />
+
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="@string/google_maps_key" />
@@ -32,29 +34,23 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity android:name=".activities.MainActivity" />
-
         <activity
             android:name=".activities.HomeDrawerActivity"
             android:label="@string/title_activity_home_drawer"
             android:theme="@style/AppTheme.NoActionBar" />
-
         <activity
             android:name=".reminder.activity.SplashActivityPillsReminder"
             android:parentActivityName=".activities.HomeDrawerActivity"
             android:theme="@style/AppTheme.NoActionBar" />
-
         <activity
             android:name=".reminder.activity.MainActivityPillsReminder"
             android:parentActivityName=".activities.HomeDrawerActivity"
             android:theme="@style/AppTheme.NoActionBar" />
-
         <activity
             android:name=".reminder.activity.AddMedicineActivity"
             android:parentActivityName=".reminder.activity.MainActivityPillsReminder"
             android:theme="@style/AppTheme.NoActionBar" />
-
         <activity
             android:name=".reminder.activity.MedicinePreviewActivity"
             android:parentActivityName=".reminder.activity.MainActivityPillsReminder"
@@ -75,15 +71,12 @@
             android:name=".reminder.Class.MyService"
             android:enabled="true"
             android:exported="true" />
-
         <service
             android:name=".backgroundServices.BackgroundTasksService"
             android:enabled="true" />
-
         <service
             android:name=".backgroundServices.BackgroundTasksJobService"
             android:permission="android.permission.BIND_JOB_SERVICE" />
-
     </application>
 
 </manifest>

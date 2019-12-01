@@ -6,7 +6,7 @@
     android:background="@drawable/gradient_animation"
     android:clickable="true"
     android:padding="10dp"
-    tools:context=".FragmentContactUs">
+    tools:context=".communicate.FragmentContactUs">
 
     <ScrollView
         android:layout_width="match_parent"

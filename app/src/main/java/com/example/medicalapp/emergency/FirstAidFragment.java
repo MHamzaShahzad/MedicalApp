@@ -1,4 +1,4 @@
-package com.example.medicalapp;
+package com.example.medicalapp.emergency;
 
 
 import android.app.Activity;
@@ -10,6 +10,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.medicalapp.R;
 import com.example.medicalapp.interfaces.FragmentInteractionListenerInterface;
 
 

@@ -13,14 +13,14 @@ import android.location.LocationManager;
 import android.os.Bundle;
 
 import com.example.medicalapp.Constants;
-import com.example.medicalapp.FirstAidFragment;
-import com.example.medicalapp.FragmentContactUs;
-import com.example.medicalapp.FragmentNearbyPlaces;
+import com.example.medicalapp.emergency.FirstAidFragment;
+import com.example.medicalapp.communicate.FragmentContactUs;
+import com.example.medicalapp.inventory.MedInventoryMainActivity;
+import com.example.medicalapp.nearby.FragmentNearbyPlaces;
 import com.example.medicalapp.R;
 import com.example.medicalapp.interfaces.FragmentInteractionListenerInterface;
 import com.example.medicalapp.reminder.activity.SplashActivityPillsReminder;
 import com.firebase.ui.auth.AuthUI;
-import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.location.FusedLocationProviderClient;
 import com.google.android.gms.location.LocationCallback;
 import com.google.android.gms.location.LocationRequest;
@@ -28,8 +28,6 @@ import com.google.android.gms.location.LocationResult;
 import com.google.android.gms.location.LocationServices;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.snackbar.Snackbar;
 
 import android.os.Looper;
 import android.util.Log;
@@ -38,18 +36,11 @@ import android.view.View;
 import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.core.app.ActivityCompat;
-import androidx.core.view.GravityCompat;
-import androidx.appcompat.app.ActionBarDrawerToggle;
 
 import android.view.MenuItem;
 
-import com.google.android.material.navigation.NavigationView;
-
-import androidx.drawerlayout.widget.DrawerLayout;
-
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
-import androidx.fragment.app.FragmentManager;
 
 import android.view.Menu;
 
@@ -190,6 +181,8 @@ public class HomeDrawerActivity extends AppCompatActivity
             startActivity(new Intent(context, SplashActivityPillsReminder.class));
 
         } else if (view == cardMedicineInventory) {
+
+            startActivity(new Intent(context, MedInventoryMainActivity.class));
 
         } else if (view == cardShareLocation) {
 
