@@ -1,4 +1,4 @@
-package com.example.medicalapp.models;
+package com.example.medicalapp.doc_pat_interaction.models;
 
 public class User {
 

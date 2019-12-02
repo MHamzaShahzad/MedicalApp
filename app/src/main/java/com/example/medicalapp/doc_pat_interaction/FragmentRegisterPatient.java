@@ -1,6 +1,7 @@
 package com.example.medicalapp.doc_pat_interaction;
 
 
+import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
 
@@ -15,12 +16,12 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
-import android.widget.Toast;
 
 import com.example.medicalapp.R;
 import com.example.medicalapp.controllers.MyFirebaseDatabase;
-import com.example.medicalapp.models.Patient;
-import com.example.medicalapp.models.User;
+import com.example.medicalapp.doc_pat_interaction.models.Patient;
+import com.example.medicalapp.doc_pat_interaction.models.User;
+import com.example.medicalapp.interfaces.FragmentInteractionListenerInterface;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.snackbar.Snackbar;
@@ -49,6 +50,9 @@ public class FragmentRegisterPatient extends Fragment {
 
     private FirebaseUser firebaseUser;
 
+    private FragmentInteractionListenerInterface mListener;
+
+
     public static FragmentRegisterPatient newInstance() {
         return new FragmentRegisterPatient();
     }
@@ -61,6 +65,8 @@ public class FragmentRegisterPatient extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        if (mListener != null)
+            mListener.onFragmentInteraction(this.getTag());
         firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
         context = container.getContext();
         // Inflate the layout for this fragment
@@ -204,6 +210,29 @@ public class FragmentRegisterPatient extends Fragment {
                 patientHealthProfile.getText().toString().trim(),
                 new SimpleDateFormat("dd MM yyyy", Locale.ENGLISH).format(Calendar.getInstance().getTime())
         );
+    }
+
+    @Override
+    public void onAttach(Activity activity) {
+        super.onAttach(activity);
+        try {
+            mListener = (FragmentInteractionListenerInterface) activity;
+        } catch (ClassCastException e) {
+            throw new ClassCastException(activity.toString() + "must implement FragmentInteractionListenerInterface.");
+        }
+    }
+
+    @Override
+    public void onDetach() {
+        super.onDetach();
+        mListener = null;
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        if (mListener != null)
+            mListener.onFragmentInteraction(this.getTag());
     }
 
 }

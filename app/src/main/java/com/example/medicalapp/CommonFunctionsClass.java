@@ -8,6 +8,7 @@ import android.content.pm.PackageManager;
 import android.net.Uri;
 
 import androidx.core.content.ContextCompat;
+import androidx.fragment.app.FragmentManager;
 
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.GoogleApiAvailability;
@@ -50,5 +51,9 @@ public class CommonFunctionsClass {
         return true;
     }
 
+    public static void clearFragmentBackStack(FragmentManager fragmentManager){
+        for (int i = 0; i < fragmentManager.getBackStackEntryCount(); i++)
+            fragmentManager.popBackStack();
+    }
 
 }

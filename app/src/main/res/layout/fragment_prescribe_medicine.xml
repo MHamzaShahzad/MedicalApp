@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/WHITE"
+    android:clickable="true"
+    android:padding="10dp"
+    tools:context=".doc_pat_interaction.FragmentPrescribeMedicine">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Prescription"
+            android:textAlignment="center"
+            android:textSize="22sp"/>
+
+        <EditText
+            android:id="@+id/textPrescriptionDetail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textMultiLine"
+            android:lines="5"
+            android:hint="Prescription Detail"
+            android:gravity="start|top"
+            />
+
+        <EditText
+            android:id="@+id/textPrescriptionDuration"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:hint="Prescription Duration Days"/>
+
+        <Button
+            android:id="@+id/btnSubmitPrescription"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/button"
+            android:text="Submit"
+            android:textColor="@color/WHITE"/>
+
+    </LinearLayout>
+
+</FrameLayout>

@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
     <androidx.cardview.widget.CardView
-        android:id="@+id/cardDoctorList"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="2.5dp"
         android:layout_marginLeft="5dp"
         android:layout_marginRight="5dp"
-        android:layout_marginTop="2.5dp"
         android:layout_marginBottom="2.5dp">
 
         <LinearLayout
@@ -24,19 +24,19 @@
 
                 <TextView
                     android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="0.4"
-                    android:text="Doctor Name"/>
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.3"
+                    android:text="Prescribed At"
+                    />
 
                 <TextView
-                    android:id="@+id/doctorNamePlace"
+                    android:id="@+id/textPrescribedAt"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_weight="0.6"
-                    android:text="Doctor Name"/>
+                    android:layout_weight="0.7"
+                    />
 
             </LinearLayout>
-
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -45,19 +45,19 @@
 
                 <TextView
                     android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="0.4"
-                    android:text="Clinic / Hospital"/>
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.3"
+                    android:text="Duration"
+                    />
 
                 <TextView
-                    android:id="@+id/doctorClinicHospitalNamePlace"
+                    android:id="@+id/textPrescriptionDuration"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_weight="0.6"
-                    android:text="Clinic / Hospital"/>
+                    android:layout_weight="0.7"
+                    />
 
             </LinearLayout>
-
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -66,16 +66,17 @@
 
                 <TextView
                     android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="0.4"
-                    android:text="Address"/>
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.3"
+                    android:text="Prescription(s)"
+                    />
 
                 <TextView
-                    android:id="@+id/doctorClinicHospitalAddressPlace"
+                    android:id="@+id/textPrescriptionDetail"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_weight="0.6"
-                    android:text="Clinic / Hopital Address"/>
+                    android:layout_weight="0.7"
+                    />
 
             </LinearLayout>
 

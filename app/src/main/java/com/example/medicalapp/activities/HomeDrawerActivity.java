@@ -12,7 +12,9 @@ import android.location.Location;
 import android.location.LocationManager;
 import android.os.Bundle;
 
+import com.example.medicalapp.CommonFunctionsClass;
 import com.example.medicalapp.Constants;
+import com.example.medicalapp.communicate.FragmentAboutUs;
 import com.example.medicalapp.controllers.MyFirebaseDatabase;
 import com.example.medicalapp.doc_pat_interaction.FragmentMyDoctors;
 import com.example.medicalapp.doc_pat_interaction.FragmentPatientsList;
@@ -20,7 +22,7 @@ import com.example.medicalapp.doc_pat_interaction.FragmentRegisterPatient;
 import com.example.medicalapp.emergency.FirstAidFragment;
 import com.example.medicalapp.communicate.FragmentContactUs;
 import com.example.medicalapp.inventory.MedInventoryMainActivity;
-import com.example.medicalapp.models.User;
+import com.example.medicalapp.doc_pat_interaction.models.User;
 import com.example.medicalapp.nearby.FragmentNearbyPlaces;
 import com.example.medicalapp.R;
 import com.example.medicalapp.interfaces.FragmentInteractionListenerInterface;
@@ -157,9 +159,11 @@ public class HomeDrawerActivity extends AppCompatActivity
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
+        CommonFunctionsClass.clearFragmentBackStack(getSupportFragmentManager());
         if (id == R.id.action_home) {
             return true;
         } else if (id == R.id.action_about_us) {
+            getSupportFragmentManager().beginTransaction().replace(R.id.home, FragmentAboutUs.newInstance(), Constants.TITLE_ABOUT_US).addToBackStack(Constants.TITLE_ABOUT_US).commit();
             return true;
         } else if (id == R.id.action_register_patient) {
             getSupportFragmentManager().beginTransaction().replace(R.id.home, FragmentRegisterPatient.newInstance(), Constants.TITLE_REGISTER_PATIENT).addToBackStack(Constants.TITLE_REGISTER_PATIENT).commit();
