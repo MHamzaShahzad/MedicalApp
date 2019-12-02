@@ -50,6 +50,9 @@
     <string name="period_tracker">Period Tracker</string>
 
     <string name="contact_us_detail">Medical Assistance\n is the solution for the emergency situations and provides valuable features that help to handle the emergency conditions and to communicate the doctor for the routine checkup.</string>
+    <string name="action_register_patient">Register Patient</string>
+    <string name="action_patients_list">Patients List</string>
+    <string name="action_my_doctors">My Doctors</string>
     <string-array name="schedule_arrays">
         <item>Once a day</item>
         <item>Twice a day</item>

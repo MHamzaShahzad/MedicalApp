@@ -13,9 +13,14 @@ import android.location.LocationManager;
 import android.os.Bundle;
 
 import com.example.medicalapp.Constants;
+import com.example.medicalapp.controllers.MyFirebaseDatabase;
+import com.example.medicalapp.doc_pat_interaction.FragmentMyDoctors;
+import com.example.medicalapp.doc_pat_interaction.FragmentPatientsList;
+import com.example.medicalapp.doc_pat_interaction.FragmentRegisterPatient;
 import com.example.medicalapp.emergency.FirstAidFragment;
 import com.example.medicalapp.communicate.FragmentContactUs;
 import com.example.medicalapp.inventory.MedInventoryMainActivity;
+import com.example.medicalapp.models.User;
 import com.example.medicalapp.nearby.FragmentNearbyPlaces;
 import com.example.medicalapp.R;
 import com.example.medicalapp.interfaces.FragmentInteractionListenerInterface;
@@ -28,6 +33,11 @@ import com.google.android.gms.location.LocationResult;
 import com.google.android.gms.location.LocationServices;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.ValueEventListener;
 
 import android.os.Looper;
 import android.util.Log;
@@ -57,11 +67,13 @@ public class HomeDrawerActivity extends AppCompatActivity
     public static final int LOCATION_PERMISSION_ID = 44;
     private FusedLocationProviderClient mFusedLocationClient;
 
+    private FirebaseUser firebaseUser;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         context = this;
+        firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
         setContentView(R.layout.activity_home_drawer);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -105,9 +117,35 @@ public class HomeDrawerActivity extends AppCompatActivity
     }
 
     @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
+    public boolean onCreateOptionsMenu(final Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.home_drawer, menu);
+        MyFirebaseDatabase.USERS_REFERENCE.child(firebaseUser.getPhoneNumber()).addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                if (dataSnapshot.exists() && dataSnapshot.getValue() != null) {
+                    try {
+
+                        User user = dataSnapshot.getValue(User.class);
+                        if (user != null) {
+                            if (user.getAccountType().equals(Constants.ACCOUNT_TYPE_DOCTOR))
+                                getMenuInflater().inflate(R.menu.home_menu_doctor, menu);
+                            else if (user.getAccountType().equals(Constants.ACCOUNT_TYPE_PATIENT))
+                                getMenuInflater().inflate(R.menu.home_menu_patient, menu);
+                            else
+                                getMenuInflater().inflate(R.menu.home_drawer, menu);
+                        }
+
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
         return true;
     }
 
@@ -122,6 +160,15 @@ public class HomeDrawerActivity extends AppCompatActivity
         if (id == R.id.action_home) {
             return true;
         } else if (id == R.id.action_about_us) {
+            return true;
+        } else if (id == R.id.action_register_patient) {
+            getSupportFragmentManager().beginTransaction().replace(R.id.home, FragmentRegisterPatient.newInstance(), Constants.TITLE_REGISTER_PATIENT).addToBackStack(Constants.TITLE_REGISTER_PATIENT).commit();
+            return true;
+        } else if (id == R.id.action_patients_list) {
+            getSupportFragmentManager().beginTransaction().replace(R.id.home, FragmentPatientsList.newInstance(), Constants.TITLE_MY_PATIENTS).addToBackStack(Constants.TITLE_MY_PATIENTS).commit();
+            return true;
+        } else if (id == R.id.action_my_doctors) {
+            getSupportFragmentManager().beginTransaction().replace(R.id.home, FragmentMyDoctors.newInstance(), Constants.TITLE_MY_DOCTORS).addToBackStack(Constants.TITLE_MY_DOCTORS).commit();
             return true;
         } else if (id == R.id.action_contact_us) {
             getSupportFragmentManager().beginTransaction().replace(R.id.home, FragmentContactUs.newInstance(), Constants.TITLE_CONTACT_US).addToBackStack(Constants.TITLE_CONTACT_US).commit();
@@ -220,13 +267,13 @@ public class HomeDrawerActivity extends AppCompatActivity
                             }
                         }
                 );
-        }else
+        } else
             requestPermissions();
 
     }
 
     @SuppressLint("MissingPermission")
-    private void requestNewLocationData(){
+    private void requestNewLocationData() {
 
         LocationRequest mLocationRequest = new LocationRequest();
         mLocationRequest.setPriority(LocationRequest.PRIORITY_HIGH_ACCURACY);
@@ -245,6 +292,7 @@ public class HomeDrawerActivity extends AppCompatActivity
     private LocationCallback mLocationCallback = new LocationCallback() {
         @Override
         public void onLocationResult(LocationResult locationResult) {
+
             Location mLastLocation = locationResult.getLastLocation();
             String address = getCompleteAddressString(context, mLastLocation.getLatitude(), mLastLocation.getLongitude());
             Intent i = new Intent(Intent.ACTION_SEND);
@@ -262,6 +310,7 @@ public class HomeDrawerActivity extends AppCompatActivity
         }
         return false;
     }
+
     private void requestPermissions() {
         ActivityCompat.requestPermissions(
                 ((Activity) context),
@@ -269,12 +318,14 @@ public class HomeDrawerActivity extends AppCompatActivity
                 LOCATION_PERMISSION_ID
         );
     }
+
     private boolean isLocationEnabled() {
         LocationManager locationManager = (LocationManager) context.getSystemService(Context.LOCATION_SERVICE);
         return locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER) || locationManager.isProviderEnabled(
                 LocationManager.NETWORK_PROVIDER
         );
     }
+
     @Override
     public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);

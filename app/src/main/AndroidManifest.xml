@@ -64,6 +64,7 @@
             <intent-filter>
                 <action android:name="android.intent.action.BOOT_COMPLETED" />
                 <action android:name="ac.in.ActivityRecognition.RestartSensor" />
+                <action android:name="android.action.stop.alarm" />
             </intent-filter>
         </receiver>
 

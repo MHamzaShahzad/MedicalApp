@@ -11,13 +11,17 @@ import android.net.Uri;
 import android.os.Build;
 import android.view.WindowManager;
 
+import com.example.medicalapp.Constants;
 import com.example.medicalapp.controllers.CustomNotificationGenerator;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 public class AlarmReceiver extends BroadcastReceiver {
     Uri alarmTone = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_ALARM);
     private static Ringtone ringtoneAlarm;
     private static AlertDialog.Builder builder;
     private static AlertDialog alert;
+    private FirebaseUser firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
 
     @Override
     public void onReceive(Context context, Intent intent) {
@@ -32,43 +36,57 @@ public class AlarmReceiver extends BroadcastReceiver {
         if (ringtoneAlarm == null)
             ringtoneAlarm = RingtoneManager.getRingtone(context, alarmTone);
 
-        if (!ringtoneAlarm.isPlaying())
-            ringtoneAlarm.play();
+        if (intent.getAction() != null && intent.getAction().equals(Constants.STRING_EXTRA_STOP_RINGTONE)) {
 
-        try {
-            if (builder == null) {
-                builder = new AlertDialog.Builder(context);
-                String msg = "Time to take a medicine";
-                builder.setMessage(msg).setCancelable(
-                        false).setPositiveButton("OK",
-                        new DialogInterface.OnClickListener() {
-                            public void onClick(DialogInterface dialog, int id) {
-                                dialog.cancel();
-                                ringtoneAlarm.stop();
-                            }
-                        });
+            if (ringtoneAlarm.isPlaying())
+                ringtoneAlarm.stop();
+
+        } else {
+
+            if (firebaseUser != null) {
+
+
+                if (!ringtoneAlarm.isPlaying())
+                    ringtoneAlarm.play();
+
+                try {
+                    if (builder == null) {
+                        builder = new AlertDialog.Builder(context);
+                        String msg = "Time to take a medicine";
+                        builder.setMessage(msg).setCancelable(
+                                false).setPositiveButton("OK",
+                                new DialogInterface.OnClickListener() {
+                                    public void onClick(DialogInterface dialog, int id) {
+                                        dialog.cancel();
+                                        ringtoneAlarm.stop();
+                                    }
+                                });
+                    }
+                    if (alert == null)
+                        alert = builder.create();
+
+                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O)
+                        alert.getWindow().setType(WindowManager.LayoutParams.TYPE_APPLICATION_OVERLAY);
+                    else
+                        alert.getWindow().setType(WindowManager.LayoutParams.TYPE_SYSTEM_OVERLAY);
+
+                    if (!alert.isShowing())
+                        alert.show();
+
+                } catch (Exception e) {
+                    e.printStackTrace();
+
+                    new CustomNotificationGenerator(context)
+                            .createNotification(
+                                    CustomNotificationGenerator.getNextNotifId(context),
+                                    "Medicine Reminder",
+                                    "Time to take medicine.",
+                                    null
+                            );
+
+                }
+
             }
-            if (alert == null)
-                alert = builder.create();
-
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O)
-                alert.getWindow().setType(WindowManager.LayoutParams.TYPE_APPLICATION_OVERLAY);
-            else
-                alert.getWindow().setType(WindowManager.LayoutParams.TYPE_SYSTEM_OVERLAY);
-
-            if (!alert.isShowing())
-                alert.show();
-
-        } catch (Exception e) {
-            e.printStackTrace();
-
-            new CustomNotificationGenerator(context)
-                    .createNotification(
-                            CustomNotificationGenerator.getNextNotifId(context),
-                            "Medicine Reminder",
-                            "Time to take medicine.",
-                            null
-                    );
 
         }
 

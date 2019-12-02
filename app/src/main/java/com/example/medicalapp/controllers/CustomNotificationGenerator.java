@@ -9,6 +9,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.media.Ringtone;
 import android.media.RingtoneManager;
 import android.net.Uri;
 import android.os.Build;
@@ -19,7 +20,9 @@ import android.util.Log;
 import androidx.core.app.NotificationCompat;
 import androidx.core.app.NotificationManagerCompat;
 
+import com.example.medicalapp.Constants;
 import com.example.medicalapp.R;
+import com.example.medicalapp.activities.MainActivity;
 import com.example.medicalapp.async.AsyncClassTotalNotifs;
 
 public class CustomNotificationGenerator {
@@ -43,11 +46,12 @@ public class CustomNotificationGenerator {
     //to receive Ride notification
     public void createNotification(int noti_id, String noti_title, String noti_message, Bitmap postImageBitmap) {
 
-        //final Intent intent = new Intent(context, Home.class);
-        final Intent intent = new Intent();
+        final Intent intent = new Intent(context, MainActivity.class);
+        //final Intent intent = new Intent();
         //intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK );
 
         intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
+        intent.putExtra(Constants.STRING_EXTRA_NOTIFICATION_STOP_RINGTONE, true);
         PendingIntent pendingIntent = PendingIntent.getActivity(context, noti_id, intent, 0);
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {

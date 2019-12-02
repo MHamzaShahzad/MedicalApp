@@ -80,4 +80,10 @@
         <item name="android:textColorSecondary">@color/WHITE</item>
     </style>
 
+    <style name="MyRaidoButton" parent="Widget.AppCompat.CompoundButton.RadioButton">
+        <item name="colorAccent">#0091ea</item>
+        <item name="android:textColorPrimaryDisableOnly">#FFC107</item>
+        <item name="android:textAppearance">@style/TextAppearance.AppCompat</item>
+    </style>
+
 </resources>

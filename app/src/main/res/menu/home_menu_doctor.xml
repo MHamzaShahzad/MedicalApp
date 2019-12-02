@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/action_home"
+        android:title="@string/action_home" />
+    <item
+        android:id="@+id/action_register_patient"
+        android:title="@string/action_register_patient" />
+    <item
+        android:id="@+id/action_patients_list"
+        android:title="@string/action_patients_list" />
+    <item
+        android:id="@+id/action_contact_us"
+        android:title="@string/action_contact_us" />
+    <item
+        android:id="@+id/action_about_us"
+        android:title="@string/action_about_us" />
+    <item
+        android:id="@+id/action_logout"
+        android:title="@string/action_logout" />
+</menu>
