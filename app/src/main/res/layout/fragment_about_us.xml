@@ -1,16 +1,131 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/gradient_animation"
     android:clickable="true"
-    android:background="@color/WHITE"
     tools:context=".communicate.FragmentAboutUs">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:fillViewport="true">
 
-</FrameLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/txt_splash"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:fontFamily="sans-serif-condensed-medium"
+                android:text="@string/app_name"
+                android:textAlignment="center"
+                android:textColor="@color/WHITE"
+                android:textSize="30sp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/splash_logo"
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                android:layout_below="@id/txt_splash" />
+
+            <TextView
+                android:id="@+id/tagline"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/splash_logo"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="5dp"
+                android:text="Changing the way you receive healthcare."
+                android:textAlignment="center"
+                android:textColor="@color/WHITE"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/heading"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tagline"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="10dp"
+                android:text="About us"
+                android:textColor="@color/WHITE"
+                android:textSize="21sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/about_us"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/heading"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="7dp"
+                android:layout_marginRight="8dp"
+                android:text="@string/contact_us_detail"
+                android:textColor="@color/WHITE"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/about_us_"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/about_us"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="8dp"
+                android:text="@string/about_us"
+                android:textColor="@color/WHITE"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/about_us_end"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="7dp"
+                android:layout_below="@id/about_us_"
+                android:textColor="@color/WHITE"
+                android:layout_marginTop="15dp"
+                android:textSize="16sp"
+                android:text="There are many apps working around but not a single one combines all these features. " />
+
+            <TextView
+                android:id="@+id/rights_reserved"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/about_us_end"
+                android:layout_centerHorizontal="true"
+                android:layout_margin="7dp"
+                android:layout_marginTop="15dp"
+                android:text="Medical Assistance Pvt.Ltd 2019©, All rights reserved."
+                android:textAlignment="center"
+                android:textColor="@color/WHITE"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+
+            <TextView
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/rights_reserved"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="3dp"
+                android:fontFamily="serif-monospace"
+                android:text="Medical Assistance"
+                android:textAlignment="center"
+                android:textColor="@color/WHITE"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+        </RelativeLayout>
+
+    </ScrollView>
+
+
+</RelativeLayout>

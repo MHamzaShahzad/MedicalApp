@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@color/WHITE"
+    android:background="@drawable/gradient_animation"
     android:clickable="true"
     android:padding="10dp"
     tools:context=".doc_pat_interaction.FragmentPrescribeMedicine">
@@ -18,7 +18,8 @@
             android:layout_height="wrap_content"
             android:text="Prescription"
             android:textAlignment="center"
-            android:textSize="22sp"/>
+            android:textSize="22sp"
+            android:textColor="@color/WHITE"/>
 
         <EditText
             android:id="@+id/textPrescriptionDetail"
@@ -28,6 +29,8 @@
             android:lines="5"
             android:hint="Prescription Detail"
             android:gravity="start|top"
+            android:textColorHint="@color/WHITE"
+            android:textColor="@color/WHITE"
             />
 
         <EditText
@@ -35,13 +38,15 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="number"
+            android:textColorHint="@color/WHITE"
+            android:textColor="@color/WHITE"
             android:hint="Prescription Duration Days"/>
 
         <Button
             android:id="@+id/btnSubmitPrescription"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/button"
+            android:background="@color/colorPrimary"
             android:text="Submit"
             android:textColor="@color/WHITE"/>
 

@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/WHITE"
+    android:background="@drawable/gradient_animation"
     android:clickable="true"
     tools:context=".inventory.FragmentAddMedInInventory">
 
@@ -15,13 +15,18 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:layout_marginTop="10dp">
 
             <EditText
                 android:id="@+id/medName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="text"
+                android:textColor="@color/WHITE"
+                android:textColorHint="@color/WHITE"
+                android:drawableLeft="@drawable/ic_medicine_24dp"
+                android:drawablePadding="5dp"
                 android:hint="Medicine Name" />
 
             <EditText
@@ -30,6 +35,10 @@
                 android:layout_height="wrap_content"
                 android:focusable="false"
                 android:focusableInTouchMode="false"
+                android:textColor="@color/WHITE"
+                android:drawableLeft="@drawable/ic_expiry_date_black_24dp"
+                android:textColorHint="@color/WHITE"
+                android:drawablePadding="5dp"
                 android:hint="Medicine Expiry Date" />
 
             <EditText
@@ -37,6 +46,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="number"
+                android:textColor="@color/WHITE"
+                android:textColorHint="@color/WHITE"
+                android:drawableLeft="@drawable/ic_storage_black_24dp"
+                android:drawablePadding="5dp"
                 android:hint="Medicine Stock" />
 
             <Spinner
@@ -54,7 +67,9 @@
                     android:id="@+id/btnDecrement"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="-"/>
+                    android:background="@color/colorPrimary"
+                    android:text="-"
+                    android:textColor="@color/WHITE"/>
 
                 <EditText
                     android:id="@+id/medUserPerDay"
@@ -62,13 +77,17 @@
                     android:layout_height="wrap_content"
                     android:inputType="number"
                     android:gravity="center"
+                    android:textColor="@color/WHITE"
+                    android:textColorHint="@color/WHITE"
                     android:hint="Medicine Used Per Day" />
 
                 <Button
                     android:id="@+id/btnIncrement"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="+"/>
+                    android:text="+"
+                    android:background="@color/colorPrimary"
+                    android:textColor="@color/WHITE"/>
 
             </LinearLayout>
 
@@ -79,14 +98,19 @@
                 android:inputType="textMultiLine"
                 android:lines="3"
                 android:gravity="start|top"
-                android:hint="Medicine Detail" />
+                android:textColorHint="@color/WHITE"
+                android:textColor="@color/WHITE"
+                android:hint="Medicine Detail"
+                android:paddingLeft="5dp"/>
 
             <Button
                 android:id="@+id/btnSubmitMed"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:text="Submit"/>
+                android:textColor="@color/WHITE"
+                android:text="Submit"
+                android:background="@color/colorPrimary"/>
 
         </LinearLayout>
 

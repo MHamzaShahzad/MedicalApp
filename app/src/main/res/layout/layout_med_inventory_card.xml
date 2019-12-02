@@ -2,32 +2,38 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:background="@drawable/gradient_animation">
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardStoredMed"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="5dp"
-        android:layout_marginTop="2.5dp"
+        android:layout_marginTop="3dp"
         android:layout_marginRight="5dp"
-        android:layout_marginBottom="2.5dp">
+        android:layout_marginBottom="3dp"
+        >
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:background="@color/colorPrimary">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:padding="5dp">
 
                 <TextView
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="0.4"
-                    android:text="Name" />
+                    android:text="Medicine Name"
+                    android:textColor="@color/WHITE"
+                    android:drawableLeft="@drawable/ic_medicine_24dp"/>
 
                 <TextView
                     android:id="@+id/medNamePlace"
@@ -35,20 +41,24 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
                     android:layout_weight="0.6"
-                    android:text="Name" />
+                    android:text="Name"
+                    android:textColor="@color/WHITE"/>
 
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:padding="5dp">
 
                 <TextView
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="0.4"
-                    android:text="Remaining Stock" />
+                    android:text="Remaining Stock"
+                    android:textColor="@color/WHITE"
+                    android:drawableLeft="@drawable/ic_storage_black_24dp"/>
 
                 <TextView
                     android:id="@+id/medRemainingStockPlace"
@@ -56,20 +66,24 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
                     android:layout_weight="0.6"
-                    android:text="Medicine Expired At" />
+                    android:text="Medicine Expired At"
+                    android:textColor="@color/WHITE"/>
 
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:padding="5dp">
 
                 <TextView
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="0.4"
-                    android:text="Remaining Stock" />
+                    android:text="Remaining Stock"
+                    android:drawableLeft="@drawable/ic_storage_black_24dp"
+                    android:textColor="@color/WHITE"/>
 
                 <TextView
                     android:id="@+id/medDailyTakenPlace"
@@ -77,20 +91,24 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
                     android:layout_weight="0.6"
-                    android:text="Daily Med Used" />
+                    android:text="Daily Med Used"
+                    android:textColor="@color/WHITE"/>
 
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:padding="5dp">
 
                 <TextView
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="0.4"
-                    android:text="Added At" />
+                    android:text="Added At"
+                    android:drawableLeft="@drawable/ic_expiry_date_black_24dp"
+                    android:textColor="@color/WHITE"/>
 
                 <TextView
                     android:id="@+id/medAddedAtPlace"
@@ -98,20 +116,25 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
                     android:layout_weight="0.6"
-                    android:text="Medicine Added At" />
+                    android:text="Medicine Added At"
+
+                    android:textColor="@color/WHITE"/>
 
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:padding="5dp">
 
                 <TextView
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="0.4"
-                    android:text="Expired At" />
+                    android:text="Expired At"
+                    android:drawableLeft="@drawable/ic_expiry_date_black_24dp"
+                    android:textColor="@color/WHITE"/>
 
                 <TextView
                     android:id="@+id/medExpiredAtPlace"
@@ -119,20 +142,24 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
                     android:layout_weight="0.6"
-                    android:text="Medicine Expired At" />
+                    android:text="Medicine Expired At"
+                    android:textColor="@color/WHITE"/>
 
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:padding="5dp">
 
                 <TextView
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="0.4"
-                    android:text="Medicine Description" />
+                    android:text="Medicine Description"
+                    android:drawableLeft="@drawable/ic_description_black_24dp"
+                    android:textColor="@color/WHITE"/>
 
                 <TextView
                     android:id="@+id/medDescriptionPlace"
@@ -140,7 +167,8 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
                     android:layout_weight="0.6"
-                    android:text="Medicine Name" />
+                    android:text="Medicine Name"
+                    android:textColor="@color/WHITE"/>
 
             </LinearLayout>
 

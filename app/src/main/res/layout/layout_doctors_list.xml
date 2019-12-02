@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gradient_animation">
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardDoctorList"
@@ -9,31 +11,37 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="5dp"
         android:layout_marginRight="5dp"
-        android:layout_marginTop="2.5dp"
-        android:layout_marginBottom="2.5dp">
+        android:layout_marginTop="3dp"
+        android:layout_marginBottom="3dp">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:background="@color/colorPrimary"
+            android:padding="10dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                >
 
                 <TextView
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="0.4"
-                    android:text="Doctor Name"/>
+                    android:text="Doctor Name"
+                    android:drawableLeft="@drawable/ic_person_black_24dp"
+                    android:textColor="@color/WHITE"/>
 
                 <TextView
                     android:id="@+id/doctorNamePlace"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="0.6"
-                    android:text="Doctor Name"/>
+                    android:text="Doctor Name"
+                    android:textColor="@color/WHITE"/>
 
             </LinearLayout>
 
@@ -47,14 +55,17 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="0.4"
-                    android:text="Clinic / Hospital"/>
+                    android:text="Clinic / Hospital"
+                    android:textColor="@color/WHITE"
+                    android:drawableLeft="@drawable/ic_business_black_24dp"/>
 
                 <TextView
                     android:id="@+id/doctorClinicHospitalNamePlace"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="0.6"
-                    android:text="Clinic / Hospital"/>
+                    android:text="Clinic / Hospital"
+                    android:textColor="@color/WHITE"/>
 
             </LinearLayout>
 
@@ -68,14 +79,17 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="0.4"
-                    android:text="Address"/>
+                    android:text="Address"
+                    android:drawableLeft="@drawable/ic_location_on_black_24dp"
+                    android:textColor="@color/WHITE"/>
 
                 <TextView
                     android:id="@+id/doctorClinicHospitalAddressPlace"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="0.6"
-                    android:text="Clinic / Hopital Address"/>
+                    android:text="Clinic / Hopital Address"
+                    android:textColor="@color/WHITE"/>
 
             </LinearLayout>
 
