@@ -144,17 +144,53 @@ public class FragmentRegisterPatient extends Fragment {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
                         if (task.isSuccessful()) {
-                            MyFirebaseDatabase.MY_DOCTORS_REFERENCE.child(ccp.getFullNumberWithPlus()).push().setValue(firebaseUser.getPhoneNumber()).addOnCompleteListener(new OnCompleteListener<Void>() {
+                            MyFirebaseDatabase.MY_DOCTORS_REFERENCE.child(ccp.getFullNumberWithPlus()).addListenerForSingleValueEvent(new ValueEventListener() {
                                 @Override
-                                public void onComplete(@NonNull Task<Void> task) {
-                                    Snackbar.make(view, "Patient successfully registered!", Snackbar.LENGTH_LONG).show();
-                                    ((FragmentActivity) context).getSupportFragmentManager().popBackStack();
+                                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+
+                                    if (dataSnapshot.exists() && dataSnapshot.getValue() != null) {
+
+                                        if (!isDoctorAlreadyExists(dataSnapshot))
+                                            addNewDoctor();
+                                        else {
+                                            Snackbar.make(view, "Successful!", Snackbar.LENGTH_LONG).show();
+                                            ((FragmentActivity) context).getSupportFragmentManager().popBackStack();
+                                        }
+
+
+                                    } else
+                                        addNewDoctor();
+                                }
+
+                                @Override
+                                public void onCancelled(@NonNull DatabaseError databaseError) {
+
                                 }
                             });
+
                         } else
                             Snackbar.make(view, "Can't register, please try again!", Snackbar.LENGTH_LONG).show();
                     }
                 });
+            }
+        });
+    }
+
+    private boolean isDoctorAlreadyExists(DataSnapshot dataSnapshot) {
+        Iterable<DataSnapshot> snapshots = dataSnapshot.getChildren();
+        for (DataSnapshot snapshot : snapshots) {
+            if (snapshot.getValue() != null && snapshot.getValue().equals(firebaseUser.getPhoneNumber()))
+                return true;
+        }
+        return false;
+    }
+
+    private void addNewDoctor() {
+        MyFirebaseDatabase.MY_DOCTORS_REFERENCE.child(ccp.getFullNumberWithPlus()).push().setValue(firebaseUser.getPhoneNumber()).addOnCompleteListener(new OnCompleteListener<Void>() {
+            @Override
+            public void onComplete(@NonNull Task<Void> task) {
+                Snackbar.make(view, "Patient successfully registered!", Snackbar.LENGTH_LONG).show();
+                ((FragmentActivity) context).getSupportFragmentManager().popBackStack();
             }
         });
     }
