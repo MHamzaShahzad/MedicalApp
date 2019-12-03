@@ -162,7 +162,10 @@ public class HomeDrawerActivity extends AppCompatActivity
         CommonFunctionsClass.clearFragmentBackStack(getSupportFragmentManager());
         if (id == R.id.action_home) {
             return true;
-        } else if (id == R.id.action_about_us) {
+        } else if (id == R.id.action_emergency_call) {
+            CommonFunctionsClass.makeCall(context,"1122");
+            return true;
+        }  else if (id == R.id.action_about_us) {
             getSupportFragmentManager().beginTransaction().replace(R.id.home, FragmentAboutUs.newInstance(), Constants.TITLE_ABOUT_US).addToBackStack(Constants.TITLE_ABOUT_US).commit();
             return true;
         } else if (id == R.id.action_register_patient) {

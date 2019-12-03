@@ -6,6 +6,7 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.util.Log;
 
+import com.example.medicalapp.Constants;
 import com.example.medicalapp.reminder.Class.Medicine;
 import com.example.medicalapp.reminder.Class.MedicinePerRow;
 import com.example.medicalapp.reminder.database.DatabaseHelper;
@@ -36,6 +37,7 @@ public class MedInventoryDatabaseManagement {
         contentValues.put(MedInventoryDatabaseHelper.MEDICINE_PER_DAY, medicine.getMedPerDay());
         contentValues.put(MedInventoryDatabaseHelper.MEDICINE_ADDED_AT, medicine.getMedAddedAt());
         contentValues.put(MedInventoryDatabaseHelper.MEDICINE_EXPIRY_DATE, medicine.getMedExpiryDate());
+        contentValues.put(MedInventoryDatabaseHelper.IS_NOTIFIED_ABOUT_EXPIRY, medicine.getIsNotifiedAboutExpiry());
 
         long row = -1;
         HashMap<String, Object> map = new HashMap<>();
@@ -72,6 +74,7 @@ public class MedInventoryDatabaseManagement {
                 String mTimeExpire = cursor.getString(cursor.getColumnIndex(MedInventoryDatabaseHelper.MEDICINE_EXPIRY_DATE));
                 int mPerDay = cursor.getInt(cursor.getColumnIndex(MedInventoryDatabaseHelper.MEDICINE_PER_DAY));
                 int mStock = cursor.getInt(cursor.getColumnIndex(MedInventoryDatabaseHelper.MEDICINE_STOCK));
+                int isNotified = cursor.getInt(cursor.getColumnIndex(MedInventoryDatabaseHelper.IS_NOTIFIED_ABOUT_EXPIRY));
 
 
                 list.add(
@@ -83,7 +86,8 @@ public class MedInventoryDatabaseManagement {
                                 mTimeExpire,
                                 mType,
                                 mStock,
-                                mPerDay
+                                mPerDay,
+                                isNotified
                         )
                 );
 

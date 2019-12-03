@@ -4,6 +4,9 @@
         android:id="@+id/action_home"
         android:title="@string/action_home" />
     <item
+        android:id="@+id/action_emergency_call"
+        android:title="@string/action_emergency_call" />
+    <item
         android:id="@+id/action_my_doctors"
         android:title="@string/action_my_doctors" />
     <item

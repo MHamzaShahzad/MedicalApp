@@ -210,7 +210,8 @@ public class FragmentAddMedInInventory extends Fragment implements View.OnClickL
                 medExpiryDate.getText().toString().trim(),
                 spinnerMedType.getSelectedItem().toString(),
                 Integer.valueOf(medStock.getText().toString().trim()),
-                Integer.valueOf(medUserPerDay.getText().toString().trim())
+                Integer.valueOf(medUserPerDay.getText().toString().trim()),
+                0
         );
     }
 

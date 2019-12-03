@@ -54,6 +54,7 @@
     <string name="action_register_patient">Register Patient</string>
     <string name="action_patients_list">Patients List</string>
     <string name="action_my_doctors">My Doctors</string>
+    <string name="action_emergency_call">Make Emergency Call</string>
     <string-array name="schedule_arrays">
         <item>Once a day</item>
         <item>Twice a day</item>

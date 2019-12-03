@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 
 import com.example.medicalapp.R;
+import com.example.medicalapp.backgroundServices.MyServicesControllerClass;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 public class MedInventoryMainActivity extends AppCompatActivity {
@@ -21,6 +22,8 @@ public class MedInventoryMainActivity extends AppCompatActivity {
         getSupportFragmentManager().beginTransaction().replace(R.id.fragment_inventory, new FragmentMedicineInventoryList()).commit();
 
         setAddMedFAB();
+
+
     }
 
     private void setAddMedFAB(){
@@ -32,4 +35,9 @@ public class MedInventoryMainActivity extends AppCompatActivity {
         });
     }
 
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        MyServicesControllerClass.startCustomBackgroundService(getApplicationContext());
+    }
 }

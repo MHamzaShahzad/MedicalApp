@@ -5,6 +5,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
 public class MedInventoryDatabaseHelper extends SQLiteOpenHelper {
+
     public static final String DATABASE_NAME = "Medicine_Inventory";
     public static final int DATABASE_VERSION = 2;
 
@@ -18,9 +19,10 @@ public class MedInventoryDatabaseHelper extends SQLiteOpenHelper {
     public static final String MEDICINE_EXPIRY_DATE = "medicine_expire_at";
     public static final String MEDICINE_PER_DAY = "medicine_per_day";
     public static final String MEDICINE_STOCK = "medicine_stock";
+    public static final String IS_NOTIFIED_ABOUT_EXPIRY = "notified_about_expiry";
 
     public static final String CREATE_TABLE_MEDICINE_DETAILS_QUERY = "create table if not exists " + TABLE_MEDICINE_DETAILS
-            + "(" + MEDICINE_ID + " integer primary key autoincrement, " + MEDICINE_NAME + " text, " + MEDICINE_DETAIL + " text, " + MEDICINE_ADDED_AT + " text," + MEDICINE_EXPIRY_DATE + " text," + MEDICINE_STOCK + " integer, " + MEDICINE_TYPE + " text, " + MEDICINE_PER_DAY + " integer);";
+            + "(" + MEDICINE_ID + " integer primary key autoincrement, " + MEDICINE_NAME + " text, " + MEDICINE_DETAIL + " text, " + MEDICINE_ADDED_AT + " text," + MEDICINE_EXPIRY_DATE + " text," + MEDICINE_STOCK + " integer, " + MEDICINE_TYPE + " text, " + MEDICINE_PER_DAY + " integer, " + IS_NOTIFIED_ABOUT_EXPIRY + " boolean )";
 
     public MedInventoryDatabaseHelper(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
@@ -36,4 +38,5 @@ public class MedInventoryDatabaseHelper extends SQLiteOpenHelper {
         db.execSQL("drop table if EXISTS " + TABLE_MEDICINE_DETAILS);
         onCreate(db);
     }
+
 }

@@ -5,12 +5,12 @@ import java.io.Serializable;
 public class MedInventoryModel implements Serializable {
 
     String medName, medDetail, medAddedAt, medExpiryDate, medType;
-    int mId, medStock, medPerDay;
+    int mId, medStock, medPerDay, isNotifiedAboutExpiry;
 
     public MedInventoryModel() {
     }
 
-    public MedInventoryModel( String medName, String medDetail, String medAddedAt, String medExpiryDate, String medType, int medStock, int medPerDay) {
+    public MedInventoryModel( String medName, String medDetail, String medAddedAt, String medExpiryDate, String medType, int medStock, int medPerDay, int isNotifiedAboutExpiry) {
         this.medName = medName;
         this.medDetail = medDetail;
         this.medAddedAt = medAddedAt;
@@ -18,9 +18,10 @@ public class MedInventoryModel implements Serializable {
         this.medType = medType;
         this.medStock = medStock;
         this.medPerDay = medPerDay;
+        this.isNotifiedAboutExpiry = isNotifiedAboutExpiry;
     }
 
-    public MedInventoryModel(int mId, String medName, String medDetail, String medAddedAt, String medExpiryDate, String medType, int medStock, int medPerDay) {
+    public MedInventoryModel(int mId, String medName, String medDetail, String medAddedAt, String medExpiryDate, String medType, int medStock, int medPerDay, int isNotifiedAboutExpiry) {
         this.mId = mId;
         this.medName = medName;
         this.medDetail = medDetail;
@@ -29,6 +30,7 @@ public class MedInventoryModel implements Serializable {
         this.medType = medType;
         this.medStock = medStock;
         this.medPerDay = medPerDay;
+        this.isNotifiedAboutExpiry = isNotifiedAboutExpiry;
     }
 
     public int getmId() {
@@ -61,5 +63,9 @@ public class MedInventoryModel implements Serializable {
 
     public int getMedPerDay() {
         return medPerDay;
+    }
+
+    public int getIsNotifiedAboutExpiry() {
+        return isNotifiedAboutExpiry;
     }
 }

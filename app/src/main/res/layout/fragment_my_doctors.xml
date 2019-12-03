@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:padding="10dp"
     android:clickable="true"
-    android:background="@color/WHITE"
+    android:background="@drawable/gradient_animation"
     tools:context=".doc_pat_interaction.FragmentMyDoctors">
 
     <androidx.recyclerview.widget.RecyclerView

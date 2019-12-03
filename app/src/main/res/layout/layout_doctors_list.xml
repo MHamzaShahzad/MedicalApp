@@ -2,8 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@drawable/gradient_animation">
+    android:layout_height="match_parent">
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardDoctorList"
@@ -32,6 +31,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="0.4"
                     android:text="Doctor Name"
+                    android:drawablePadding="5dp"
                     android:drawableLeft="@drawable/ic_person_black_24dp"
                     android:textColor="@color/WHITE"/>
 
@@ -40,6 +40,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="0.6"
+                    android:layout_marginLeft="5dp"
                     android:text="Doctor Name"
                     android:textColor="@color/WHITE"/>
 
@@ -56,6 +57,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="0.4"
                     android:text="Clinic / Hospital"
+                    android:drawablePadding="5dp"
                     android:textColor="@color/WHITE"
                     android:drawableLeft="@drawable/ic_business_black_24dp"/>
 
@@ -64,6 +66,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="0.6"
+                    android:layout_marginLeft="5dp"
                     android:text="Clinic / Hospital"
                     android:textColor="@color/WHITE"/>
 
@@ -80,6 +83,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="0.4"
                     android:text="Address"
+                    android:drawablePadding="5dp"
                     android:drawableLeft="@drawable/ic_location_on_black_24dp"
                     android:textColor="@color/WHITE"/>
 
@@ -88,6 +92,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="0.6"
+                    android:layout_marginLeft="5dp"
                     android:text="Clinic / Hopital Address"
                     android:textColor="@color/WHITE"/>
 

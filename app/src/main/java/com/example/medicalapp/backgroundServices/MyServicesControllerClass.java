@@ -14,6 +14,9 @@ public class MyServicesControllerClass {
     private static JobScheduler jobScheduler;
 
     public static void startCustomBackgroundService(Context context) {
+
+        stopCustomBackgroundService(context);
+
         if (Build.VERSION.SDK_INT >= 21) {
 
             jobScheduler = (JobScheduler) context

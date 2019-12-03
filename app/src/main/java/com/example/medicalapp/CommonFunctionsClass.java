@@ -13,6 +13,11 @@ import androidx.fragment.app.FragmentManager;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.GoogleApiAvailability;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Locale;
+
 public class CommonFunctionsClass {
 
     public static void sendSMS(Context context, String phoneNumber) {
@@ -49,6 +54,21 @@ public class CommonFunctionsClass {
             return false;
         }
         return true;
+    }
+
+    public static boolean isOutdated(String dueDate) {
+        SimpleDateFormat sdf = new SimpleDateFormat("dd MMMM yyyy", Locale.ENGLISH);
+        Date strDate = null;
+        try {
+            strDate = sdf.parse(dueDate);
+            if (strDate != null)
+                if (System.currentTimeMillis() > strDate.getTime()) {
+                    return true;
+                }
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        return false;
     }
 
     public static void clearFragmentBackStack(FragmentManager fragmentManager){

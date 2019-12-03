@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:clickable="true"
-    android:background="@color/WHITE"
+    android:background="@drawable/gradient_animation"
     android:padding="5dp"
     tools:context=".doc_pat_interaction.FragmentPatientsList">
 

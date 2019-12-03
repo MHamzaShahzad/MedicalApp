@@ -2,8 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:background="@drawable/gradient_animation">
+    android:orientation="vertical">
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardStoredMed"
@@ -32,6 +31,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="0.4"
                     android:text="Medicine Name"
+                    android:drawablePadding="10dp"
                     android:textColor="@color/WHITE"
                     android:drawableLeft="@drawable/ic_medicine_24dp"/>
 
@@ -58,6 +58,7 @@
                     android:layout_weight="0.4"
                     android:text="Remaining Stock"
                     android:textColor="@color/WHITE"
+                    android:drawablePadding="10dp"
                     android:drawableLeft="@drawable/ic_storage_black_24dp"/>
 
                 <TextView
@@ -82,6 +83,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="0.4"
                     android:text="Remaining Stock"
+                    android:drawablePadding="10dp"
                     android:drawableLeft="@drawable/ic_storage_black_24dp"
                     android:textColor="@color/WHITE"/>
 
@@ -107,6 +109,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="0.4"
                     android:text="Added At"
+                    android:drawablePadding="10dp"
                     android:drawableLeft="@drawable/ic_expiry_date_black_24dp"
                     android:textColor="@color/WHITE"/>
 
@@ -132,7 +135,8 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="0.4"
-                    android:text="Expired At"
+                    android:text="Expire At"
+                    android:drawablePadding="10dp"
                     android:drawableLeft="@drawable/ic_expiry_date_black_24dp"
                     android:textColor="@color/WHITE"/>
 
@@ -159,6 +163,7 @@
                     android:layout_weight="0.4"
                     android:text="Medicine Description"
                     android:drawableLeft="@drawable/ic_description_black_24dp"
+                    android:drawablePadding="10dp"
                     android:textColor="@color/WHITE"/>
 
                 <TextView

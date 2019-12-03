@@ -15,6 +15,7 @@ import androidx.cardview.widget.CardView;
 import androidx.fragment.app.FragmentActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.medicalapp.CommonFunctionsClass;
 import com.example.medicalapp.Constants;
 import com.example.medicalapp.R;
 
@@ -45,12 +46,14 @@ public class AdapterMedicineInventory extends RecyclerView.Adapter<AdapterMedici
 
         final MedInventoryModel medInventoryModel = medInventoryModelList.get(holder.getAdapterPosition());
 
+        holder.cardStoredMed.setBackgroundColor(context.getResources().getColor(R.color.meColor));
+
         holder.medNamePlace.setText(medInventoryModel.getMedName());
         holder.medRemainingStockPlace.setText("" + medInventoryModel.getMedStock());
         holder.medDailyTakenPlace.setText("" + medInventoryModel.getMedPerDay());
         holder.medAddedAtPlace.setText(medInventoryModel.getMedAddedAt());
-        holder.medExpiredAtPlace.setText(medInventoryModel.getMedExpiryDate());
         holder.medDescriptionPlace.setText(medInventoryModel.getMedDetail());
+        holder.medExpiredAtPlace.setText(medInventoryModel.getMedExpiryDate());
 
         holder.cardStoredMed.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
@@ -89,6 +92,12 @@ public class AdapterMedicineInventory extends RecyclerView.Adapter<AdapterMedici
                 return true;
             }
         });
+
+
+        if (CommonFunctionsClass.isOutdated(medInventoryModel.getMedExpiryDate())) {
+            holder.medExpiredAtPlace.setTextColor(context.getResources().getColor(R.color.warning));
+        }
+
 
     }
 
