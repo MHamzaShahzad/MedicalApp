@@ -3,6 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
+    android:background="@drawable/gradient_animation"
     android:padding="20dp">
 
     <TextView
@@ -11,9 +12,10 @@
         android:layout_height="wrap_content"
         android:fontFamily="@font/ralewaylight"
         android:text="Please select your account type."
-        android:textColor="#0C5692"
+        android:textColor="@color/WHITE"
         android:textSize="18sp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        />
 
     <RadioGroup
         android:id="@+id/radioGroupAccountType"
@@ -28,6 +30,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:textColor="@color/WHITE"
             android:text="Doctor" />
 
         <RadioButton
@@ -36,7 +39,8 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Patient" />
+            android:text="Patient"
+            android:textColor="@color/WHITE"/>
 
     </RadioGroup>
 
@@ -52,29 +56,45 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Enter Full Name"
-            android:inputType="textPersonName" />
+            android:textColorHint="@color/WHITE"
+            android:textColor="@color/WHITE"
+            android:drawableLeft="@drawable/ic_person_black_24dp"
+            android:inputType="textPersonName"
+            android:drawablePadding="5dp"/>
 
         <EditText
             android:id="@+id/inputDoctorClinicOrHospitalName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/ic_local_hospital_white_24dp"
             android:hint="Enter Clinic / Hospital Name"
-            android:inputType="text" />
+            android:textColorHint="@color/WHITE"
+            android:textColor="@color/WHITE"
+            android:inputType="text"
+            android:drawablePadding="5dp"/>
 
         <EditText
             android:id="@+id/inputDoctorClinicOrHospitalAddress"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Clinic / Hospital Address"
-            android:inputType="textPostalAddress" />
+            android:textColorHint="@color/WHITE"
+            android:textColor="@color/WHITE"
+            android:drawableLeft="@drawable/ic_business_black_24dp"
+            android:inputType="textPostalAddress"
+            android:drawablePadding="5dp"/>
 
         <EditText
             android:id="@+id/inputDoctorCNIC"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Enter your CNIC"
+            android:textColorHint="@color/WHITE"
+            android:textColor="@color/WHITE"
             android:inputType="number"
-            android:maxLength="13" />
+            android:drawableLeft="@drawable/ic_credit_card_white_24dp"
+            android:maxLength="13"
+            android:drawablePadding="5dp"/>
 
     </LinearLayout>
 
@@ -90,21 +110,33 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Enter Full Name"
-            android:inputType="textPersonName" />
+            android:textColorHint="@color/WHITE"
+            android:textColor="@color/WHITE"
+            android:inputType="textPersonName"
+            android:drawableLeft="@drawable/ic_person_black_24dp"
+            android:drawablePadding="5dp"/>
 
         <EditText
             android:id="@+id/inputPatientAge"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Enter Your Age"
-            android:inputType="number" />
+            android:textColorHint="@color/WHITE"
+            android:textColor="@color/WHITE"
+            android:inputType="number"
+            android:drawableLeft="@drawable/ic_expiry_date_black_24dp"
+            android:drawablePadding="5dp"/>
 
         <EditText
             android:id="@+id/inputPatientCity"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Enter Your City"
-            android:inputType="text" />
+            android:textColorHint="@color/WHITE"
+            android:textColor="@color/WHITE"
+            android:inputType="text"
+            android:drawableLeft="@drawable/ic_business_black_24dp"
+            android:drawablePadding="5dp"/>
 
     </LinearLayout>
 
@@ -117,11 +149,12 @@
         android:layout_marginTop="20dp"
         android:layout_marginRight="15dp"
         android:layout_marginBottom="20dp"
-        android:background="@drawable/gradient_background"
+        android:background="@color/colorPrimary"
         android:fontFamily="@font/ralewaylight"
         android:paddingStart="5dp"
         android:paddingLeft="5dp"
         android:text="OK"
+        android:textStyle="bold"
         android:textAlignment="center"
         android:textAllCaps="false"
         android:textColor="#fff"

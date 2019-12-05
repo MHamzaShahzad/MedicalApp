@@ -32,6 +32,7 @@
                     android:layout_weight="0.4"
                     android:text="Patient Name"
                     android:textColor="@color/WHITE"
+                    android:drawablePadding="3dp"
                     android:drawableLeft="@drawable/ic_person_black_24dp"/>
 
                 <TextView
@@ -56,6 +57,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="0.4"
                     android:text="Patient Age"
+                    android:drawablePadding="3dp"
                     android:drawableLeft="@drawable/ic_expiry_date_black_24dp"
                     android:textColor="@color/WHITE"/>
 
@@ -81,6 +83,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="0.4"
                     android:text="Reg. At"
+                    android:drawablePadding="3dp"
                     android:drawableLeft="@drawable/ic_location_on_black_24dp"
                     android:textColor="@color/WHITE"/>
 
@@ -106,6 +109,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="0.4"
                     android:text="Mobile Number"
+                    android:drawablePadding="3dp"
                     android:drawableLeft="@drawable/ic_phone_black_24dp"
                     android:textColor="@color/WHITE"/>
 
@@ -133,6 +137,7 @@
                     android:layout_weight="0.4"
                     android:text="Prescribe Med"
                     android:textColor="@color/WHITE"
+                    android:textStyle="bold"
                     android:background="@color/lightBlue"
                     android:layout_margin="5dp"/>
 
@@ -143,6 +148,7 @@
                     android:layout_weight="0.6"
                     android:text="View Prescription(s)"
                     android:textColor="@color/WHITE"
+                    android:textStyle="bold"
                     android:background="@color/lightBlue"
                     android:layout_margin="5dp"/>
 

@@ -23,6 +23,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="5dp"
+                android:layout_marginTop="5dp"
                 android:orientation="horizontal">
 
                 <TextView
@@ -31,6 +32,8 @@
                     android:layout_weight="0.3"
                     android:textColor="@color/WHITE"
                     android:text="Prescribed At"
+                    android:drawableLeft="@drawable/ic_expiry_date_black_24dp"
+                    android:drawablePadding="5dp"
                     />
 
                 <TextView
@@ -47,6 +50,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="5dp"
+                android:layout_marginTop="5dp"
                 android:orientation="horizontal">
 
                 <TextView
@@ -55,6 +59,8 @@
                     android:layout_weight="0.3"
                     android:textColor="@color/WHITE"
                     android:text="Duration"
+                    android:drawableLeft="@drawable/ic_access_time_white_24dp"
+                    android:drawablePadding="5dp"
                     />
 
                 <TextView
@@ -71,6 +77,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="5dp"
+                android:layout_marginTop="5dp"
                 android:orientation="horizontal">
 
                 <TextView
@@ -78,7 +85,9 @@
                     android:layout_height="match_parent"
                     android:layout_weight="0.3"
                     android:textColor="@color/WHITE"
-                    android:text="Prescription(s)"
+                    android:text="Prescription"
+                    android:drawableLeft="@drawable/ic_speaker_notes_white_24dp"
+                    android:drawablePadding="5dp"
                     />
 
                 <TextView

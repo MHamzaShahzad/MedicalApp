@@ -5,16 +5,24 @@
     android:layout_height="match_parent"
     tools:context=".activities.SplashActivity">
 
+
     <TextView
+        android:id="@+id/app_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/app_name"
-        android:textStyle="bold"
-        android:textSize="35sp"
-        android:textAlignment="center"
-        android:layout_centerInParent="true"
         android:fontFamily="sans-serif-condensed-medium"
-        android:textColor="@color/WHITE"/>
+        android:text="@string/app_name"
+        android:layout_marginTop="60dp"
+        android:textAlignment="center"
+        android:textColor="@color/WHITE"
+        android:textSize="35sp"
+        android:textStyle="bold" />
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:layout_centerInParent="true"
+        android:src="@mipmap/main_app_icon" />
 
 
 </RelativeLayout>

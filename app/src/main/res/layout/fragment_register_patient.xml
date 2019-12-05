@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:clickable="true"
-    android:background="@color/WHITE"
+    android:background="@drawable/gradient_animation"
     tools:context=".doc_pat_interaction.FragmentRegisterPatient">
 
     <ScrollView
@@ -72,7 +72,9 @@
                     android:layout_height="wrap_content"
                     android:focusable="false"
                     android:focusableInTouchMode="false"
-                    android:hint="Patient Name" />
+                    android:hint="Patient Name"
+                    android:textColorHint="@color/WHITE"
+                    android:textColor="@color/WHITE"/>
 
                 <EditText
                     android:id="@+id/patientAge"
@@ -80,7 +82,9 @@
                     android:layout_height="wrap_content"
                     android:focusable="false"
                     android:focusableInTouchMode="false"
-                    android:hint="Patient Age" />
+                    android:hint="Patient Age"
+                    android:textColorHint="@color/WHITE"
+                    android:textColor="@color/WHITE"/>
 
                 <EditText
                     android:id="@+id/patientHealthProfile"
@@ -89,15 +93,17 @@
                     android:gravity="start|top"
                     android:hint="Patient Health Profiles / Diseases"
                     android:inputType="textMultiLine"
-                    android:lines="5" />
+                    android:lines="5"
+                    android:textColorHint="@color/WHITE"
+                    android:textColor="@color/WHITE"/>
 
                 <Button
                     android:id="@+id/btnRegisterPatient"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
-                    android:background="@color/button"
                     android:text="REGISTER"
+                    android:background="@color/colorPrimary"
                     android:textColor="@color/WHITE" />
 
             </LinearLayout>

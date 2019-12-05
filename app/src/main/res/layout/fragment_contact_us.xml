@@ -26,56 +26,61 @@
                 android:text="@string/app_name"
                 android:textColor="@color/WHITE"
                 android:textSize="35sp"
-                android:textStyle="bold"
-                android:layout_marginBottom="40dp"/>
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/icon"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:src="@mipmap/main_app_icon"
+                android:layout_below="@id/title"/>
 
             <TextView
                 android:id="@+id/title2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/title"
+                android:layout_below="@+id/icon"
                 android:layout_margin="5dp"
+                android:layout_marginTop="30dp"
                 android:text="@string/contact_us_detail"
                 android:textAlignment="center"
                 android:textColor="@color/WHITE"
                 android:textSize="20sp"
-                android:layout_marginTop="30dp"
                 android:textStyle="bold" />
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
                 android:layout_below="@+id/title2"
-                android:layout_marginTop="10dp">
+                android:layout_marginTop="10dp"
+                android:orientation="vertical">
 
 
-            <EditText
-                android:id="@+id/inputFeedbackComplain"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="start|top"
-                android:hint="Feedback Here!"
-                android:lines="3"
-                android:textColorHint="@color/WHITE"
-                android:textColor="@color/WHITE"
-                android:padding="10dp"
-                android:background="@color/colorPrimary"
-                android:layout_margin="5dp"
-                android:layout_marginTop="5dp"
-                />
+                <EditText
+                    android:id="@+id/inputFeedbackComplain"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:layout_marginTop="5dp"
+                    android:background="@color/colorPrimary"
+                    android:gravity="start|top"
+                    android:hint="Feedback Here!"
+                    android:lines="3"
+                    android:padding="10dp"
+                    android:textColor="@color/WHITE"
+                    android:textColorHint="@color/WHITE" />
+
                 <Button
                     android:id="@+id/btnSubmitFeedBack"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_gravity="center"
                     android:layout_marginTop="15dp"
                     android:background="@color/colorPrimary"
                     android:text="Send"
                     android:textAllCaps="false"
-                    android:textSize="17sp"
                     android:textColor="#FFFFFF"
-                    android:layout_gravity="center"
-                    />
-
+                    android:textSize="17sp" />
 
 
             </LinearLayout>

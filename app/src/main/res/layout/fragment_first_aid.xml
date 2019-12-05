@@ -25,7 +25,7 @@
                 android:fontFamily="sans-serif-condensed-medium"
                 android:text="Emergency Response Training"
                 android:textAlignment="center"
-                android:textColor="#F56E6E"
+                android:textColor="@color/Red"
                 android:textSize="27sp"
                 android:textStyle="bold" />
 
@@ -35,7 +35,7 @@
                 android:layout_height="200dp"
                 android:layout_below="@+id/title"
                 android:layout_centerInParent="true"
-                android:src="@drawable/firstaid" />
+                android:src="@drawable/ic_first_aid_kit" />
 
             <TextView
                 android:id="@+id/tag"
@@ -65,6 +65,7 @@
                 android:layout_below="@id/view1"
                 android:layout_marginLeft="10dp"
                 android:text="CPR :"
+                android:layout_marginTop="5dp"
                 android:textColor="@color/Red"
                 android:textSize="27sp"
                 android:textStyle="bold" />
@@ -104,6 +105,7 @@
                 android:layout_below="@id/view2"
                 android:layout_marginLeft="10dp"
                 android:text="Proper cut care :"
+                android:layout_marginTop="5dp"
                 android:textColor="@color/Red"
                 android:textSize="27sp"
                 android:textStyle="bold" />
@@ -143,6 +145,7 @@
                 android:layout_below="@id/view3"
                 android:layout_marginLeft="10dp"
                 android:text="Head injury :"
+                android:layout_marginTop="5dp"
                 android:textColor="@color/Red"
                 android:textSize="27sp"
                 android:textStyle="bold" />
@@ -185,6 +188,7 @@ on that side to allow free drainage of the fluid from the ear.\n6. Seek medical 
                 android:layout_below="@id/view4"
                 android:layout_marginLeft="10dp"
                 android:text="Scalds and Burns :"
+                android:layout_marginTop="5dp"
                 android:textColor="@color/Red"
                 android:textSize="27sp"
                 android:textStyle="bold" />
@@ -224,6 +228,7 @@ on that side to allow free drainage of the fluid from the ear.\n6. Seek medical 
                 android:layout_below="@id/view5"
                 android:layout_marginLeft="10dp"
                 android:text="Nose Bleeding :"
+                android:layout_marginTop="5dp"
                 android:textColor="@color/Red"
                 android:textSize="27sp"
                 android:textStyle="bold" />
