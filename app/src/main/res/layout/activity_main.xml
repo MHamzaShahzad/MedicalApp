@@ -38,6 +38,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Sign In"
+            android:textStyle="bold"
             android:background="@color/colorPrimary"
             android:textColor="@color/WHITE"/>
 
@@ -46,6 +47,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Sign Up"
+            android:textStyle="bold"
             android:background="@color/colorPrimary"
             android:layout_marginTop="5dp"
             android:textColor="@color/WHITE"/>
