@@ -21,6 +21,7 @@ import android.widget.Toast;
 import com.example.medicalapp.Constants;
 import com.example.medicalapp.R;
 import com.example.medicalapp.controllers.MyFirebaseDatabase;
+import com.example.medicalapp.controllers.SendPushNotificationFirebase;
 import com.example.medicalapp.doc_pat_interaction.models.Prescription;
 import com.example.medicalapp.reminder.Class.Alert;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -91,6 +92,12 @@ public class FragmentPrescribeMedicine extends DialogFragment {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
                         if (task.isSuccessful()) {
+                            SendPushNotificationFirebase.buildAndSendNotification(
+                                    context,
+                                    arguments.getString(Constants.PATIENT_ID),
+                                    "New Prescription",
+                                    "Your doctor has prescribed you a medicine"
+                            );
                             Snackbar.make(view, "Prescription Uploaded Successfully!", Snackbar.LENGTH_LONG).show();
                             FragmentPrescribeMedicine.this.dismiss();
                         } else

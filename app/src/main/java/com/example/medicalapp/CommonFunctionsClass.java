@@ -6,12 +6,18 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.net.Uri;
+import android.util.Log;
+import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.FragmentManager;
 
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.GoogleApiAvailability;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.messaging.FirebaseMessaging;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -19,6 +25,50 @@ import java.util.Date;
 import java.util.Locale;
 
 public class CommonFunctionsClass {
+
+    private static final String TAG = CommonFunctionsClass.class.getName();
+
+    public static void subscribeToTopic(final Context context, final String topic, final boolean isHidden){
+        FirebaseMessaging.getInstance().subscribeToTopic(topic).addOnCompleteListener(new OnCompleteListener<Void>() {
+            @Override
+            public void onComplete(@NonNull Task<Void> task) {
+                if (task.isSuccessful()){
+                    if (isHidden)
+                        Log.d(TAG, "onComplete: subscription to " + topic + " successful!" );
+                    else
+                        Toast.makeText(context, "Subscription to "+ topic + " successful.", Toast.LENGTH_LONG).show();
+                }else {
+                    if (isHidden)
+                        Log.d(TAG, "onComplete: can't subscribe successfully to " + topic );
+                    else
+                        Toast.makeText(context, "Subscription to "+ topic + " failed.", Toast.LENGTH_LONG).show();
+
+                }
+
+            }
+        });
+    }
+
+    public static void unSubscribeFromTopic(final Context context, final String topic, final boolean isHidden){
+        FirebaseMessaging.getInstance().unsubscribeFromTopic(topic).addOnCompleteListener(new OnCompleteListener<Void>() {
+            @Override
+            public void onComplete(@NonNull Task<Void> task) {
+                if (task.isSuccessful()){
+                    if (isHidden)
+                        Log.d(TAG, "onComplete: un-subscribed from " + topic + " successful!" );
+                    else
+                        Toast.makeText(context, "Un-Subscribed from "+ topic + " successful.", Toast.LENGTH_LONG).show();
+                }else {
+                    if (isHidden)
+                        Log.d(TAG, "onComplete: can't un-subscribe successfully from " + topic );
+                    else
+                        Toast.makeText(context, "Un-Subscribed from "+ topic + " failed.", Toast.LENGTH_LONG).show();
+
+                }
+
+            }
+        });
+    }
 
     public static void sendSMS(Context context, String phoneNumber) {
         Intent smsIntent = new Intent(Intent.ACTION_VIEW);

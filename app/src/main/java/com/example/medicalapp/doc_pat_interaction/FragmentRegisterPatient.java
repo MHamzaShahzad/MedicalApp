@@ -19,6 +19,7 @@ import android.widget.LinearLayout;
 
 import com.example.medicalapp.R;
 import com.example.medicalapp.controllers.MyFirebaseDatabase;
+import com.example.medicalapp.controllers.SendPushNotificationFirebase;
 import com.example.medicalapp.doc_pat_interaction.models.Patient;
 import com.example.medicalapp.doc_pat_interaction.models.User;
 import com.example.medicalapp.interfaces.FragmentInteractionListenerInterface;
@@ -195,6 +196,12 @@ public class FragmentRegisterPatient extends Fragment {
         MyFirebaseDatabase.MY_DOCTORS_REFERENCE.child(ccp.getFullNumberWithPlus()).push().setValue(firebaseUser.getPhoneNumber()).addOnCompleteListener(new OnCompleteListener<Void>() {
             @Override
             public void onComplete(@NonNull Task<Void> task) {
+                SendPushNotificationFirebase.buildAndSendNotification(
+                        context,
+                        ccp.getFullNumber(),
+                        "Registered By Doctor",
+                        "You have been added into a doctors circle, now this doctor can prescribe you medicine, you can check this into your doctors list."
+                );
                 Snackbar.make(view, "Patient successfully registered!", Snackbar.LENGTH_LONG).show();
                 ((FragmentActivity) context).getSupportFragmentManager().popBackStack();
             }

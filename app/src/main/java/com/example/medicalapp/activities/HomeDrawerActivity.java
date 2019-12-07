@@ -88,6 +88,12 @@ public class HomeDrawerActivity extends AppCompatActivity
         findViewById();
     }
 
+    @Override
+    protected void onStart() {
+        super.onStart();
+        CommonFunctionsClass.subscribeToTopic(context, firebaseUser.getPhoneNumber(), true);
+    }
+
     private void findViewById() {
         cardNearByHospitals = findViewById(R.id.cardNearByHospitals);
         cardNearByPharmacies = findViewById(R.id.cardNearByPharmacies);
@@ -163,9 +169,9 @@ public class HomeDrawerActivity extends AppCompatActivity
         if (id == R.id.action_home) {
             return true;
         } else if (id == R.id.action_emergency_call) {
-            CommonFunctionsClass.makeCall(context,"1122");
+            CommonFunctionsClass.makeCall(context, "1122");
             return true;
-        }  else if (id == R.id.action_about_us) {
+        } else if (id == R.id.action_about_us) {
             getSupportFragmentManager().beginTransaction().replace(R.id.home, FragmentAboutUs.newInstance(), Constants.TITLE_ABOUT_US).addToBackStack(Constants.TITLE_ABOUT_US).commit();
             return true;
         } else if (id == R.id.action_register_patient) {
@@ -193,6 +199,7 @@ public class HomeDrawerActivity extends AppCompatActivity
             @Override
             public void onComplete(@NonNull Task<Void> task) {
                 if (task.isSuccessful()) {
+                    CommonFunctionsClass.unSubscribeFromTopic(context, firebaseUser.getPhoneNumber(), true);
                     moveToMain();
                 }
             }
