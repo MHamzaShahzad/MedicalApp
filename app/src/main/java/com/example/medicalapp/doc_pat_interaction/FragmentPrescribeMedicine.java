@@ -94,7 +94,7 @@ public class FragmentPrescribeMedicine extends DialogFragment {
                         if (task.isSuccessful()) {
                             SendPushNotificationFirebase.buildAndSendNotification(
                                     context,
-                                    arguments.getString(Constants.PATIENT_ID),
+                                    arguments.getString(Constants.PATIENT_ID).replace("+", ""),
                                     "New Prescription",
                                     "Your doctor has prescribed you a medicine"
                             );

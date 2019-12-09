@@ -198,7 +198,7 @@ public class FragmentRegisterPatient extends Fragment {
             public void onComplete(@NonNull Task<Void> task) {
                 SendPushNotificationFirebase.buildAndSendNotification(
                         context,
-                        ccp.getFullNumber(),
+                        ccp.getFullNumber().replace("+",""),
                         "Registered By Doctor",
                         "You have been added into a doctors circle, now this doctor can prescribe you medicine, you can check this into your doctors list."
                 );

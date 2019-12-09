@@ -91,7 +91,7 @@ public class HomeDrawerActivity extends AppCompatActivity
     @Override
     protected void onStart() {
         super.onStart();
-        CommonFunctionsClass.subscribeToTopic(context, firebaseUser.getPhoneNumber(), true);
+        CommonFunctionsClass.subscribeToTopic(context, firebaseUser.getPhoneNumber().replace("+",""), true);
     }
 
     private void findViewById() {
@@ -199,7 +199,7 @@ public class HomeDrawerActivity extends AppCompatActivity
             @Override
             public void onComplete(@NonNull Task<Void> task) {
                 if (task.isSuccessful()) {
-                    CommonFunctionsClass.unSubscribeFromTopic(context, firebaseUser.getPhoneNumber(), true);
+                    CommonFunctionsClass.unSubscribeFromTopic(context, firebaseUser.getPhoneNumber().replace("+", ""), true);
                     moveToMain();
                 }
             }
