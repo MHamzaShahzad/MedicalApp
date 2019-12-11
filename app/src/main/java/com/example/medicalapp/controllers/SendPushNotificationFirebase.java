@@ -21,7 +21,7 @@ public class SendPushNotificationFirebase {
     private static final String TAG = SendPushNotificationFirebase.class.getName();
 
     private static final String FCM_API = "https://fcm.googleapis.com/fcm/send";
-    private static final String serverKey = "key=" + "AAAAHwp-ooo:APA91bEQ3aGGe1wEg5mb5unp0ttaYieDAoYgWeqblyEITB98huTV3BtGpkmHd58_MmOqYUFD4IudS-P2j-kVkZXMFJv80CJOwp83xNWEQMFRMA-M3i_0lf0PCB2ld8QF-AD1X8lKuMte";
+    private static final String serverKey = "key=" + "AAAAVjeX-10:APA91bEgSg7x6UiYfM6dXVubchDfCR1nMh_dMMkfWJhoIo59tIym2bbZwPRkPJtJBl7cLp5R5lL61IXyX3bwoPQApSR5K0x_FJFKl_TZ9EnagcsVsDJGCjzi_9-ug4sxAB9xjxCKAIMf";
     private static final String contentType = "application/json";
 
     public static void buildAndSendNotification(Context context, String TOPIC_SEND_TO, String notificationTitle, String notificationMsg){
