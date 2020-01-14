@@ -51,8 +51,6 @@ public class MedInventoryDatabaseManagement {
 
     public ArrayList<MedInventoryModel> retrieveMedicineFromInventory() {
 
-
-
         ArrayList<MedInventoryModel> list = new ArrayList<>();
 
         SQLiteDatabase sqLiteDatabase = medInventoryDatabaseHelper.getReadableDatabase();
@@ -60,7 +58,6 @@ public class MedInventoryDatabaseManagement {
 
         Cursor cursor = sqLiteDatabase.rawQuery(selectQuery, null);
         Log.e(TAG, "retrieveMedicineFromInventory: " + cursor.moveToFirst());
-
 
         if (cursor.moveToFirst()) {
 
@@ -75,7 +72,6 @@ public class MedInventoryDatabaseManagement {
                 int mPerDay = cursor.getInt(cursor.getColumnIndex(MedInventoryDatabaseHelper.MEDICINE_PER_DAY));
                 int mStock = cursor.getInt(cursor.getColumnIndex(MedInventoryDatabaseHelper.MEDICINE_STOCK));
                 int isNotified = cursor.getInt(cursor.getColumnIndex(MedInventoryDatabaseHelper.IS_NOTIFIED_ABOUT_EXPIRY));
-
 
                 list.add(
                         new MedInventoryModel(

@@ -5,6 +5,7 @@ import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -188,7 +189,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
     }
 
-    private void ifAccountTypeMentioned(final FirebaseUser user){
+    private void ifAccountTypeMentioned(final FirebaseUser user) {
         MyFirebaseDatabase.USERS_REFERENCE.child(user.getPhoneNumber()).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -206,7 +207,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         });
     }
 
-    private void showDialogForAccountCreatedAs(final FirebaseUser user){
+    private void showDialogForAccountCreatedAs(final FirebaseUser user) {
 
         final RadioButton accountTypeDoctor, accountTypePatient;
         final RadioGroup radioGroupAccountType;
@@ -215,7 +216,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         final EditText inputDoctorFullName, inputDoctorClinicOrHospitalName, inputDoctorClinicOrHospitalAddress, inputDoctorCNIC,
                 inputPatientName, inputPatientAge, inputPatientCity;
 
-        View view = LayoutInflater.from(context).inflate(R.layout.layout_account_created_as , null);
+        View view = LayoutInflater.from(context).inflate(R.layout.layout_account_created_as, null);
 
         accountTypeDoctor = view.findViewById(R.id.accountTypeDoctor);
         accountTypePatient = view.findViewById(R.id.accountTypePatient);
@@ -257,32 +258,68 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             public void onClick(View view) {
 
                 User newUser = null;
-                if (accountTypeDoctor.isChecked())
-                    newUser = new User(
-                      user.getUid(),
-                      Constants.ACCOUNT_TYPE_DOCTOR,
-                      inputDoctorFullName.getText().toString().trim(),
-                      inputDoctorClinicOrHospitalName.getText().toString().trim(),
-                      inputDoctorClinicOrHospitalAddress.getText().toString().trim(),
-                      inputDoctorCNIC.getText().toString().trim()
-                    );
+                if (accountTypeDoctor.isChecked()) {
 
-                if (accountTypePatient.isChecked())
-                    newUser = new User(
-                      user.getUid(),
-                      Constants.ACCOUNT_TYPE_PATIENT,
-                      inputPatientName.getText().toString().trim(),
-                      inputPatientAge.getText().toString().trim(),
-                      inputPatientCity.getText().toString().trim()
-                    );
+                    if (TextUtils.isEmpty(inputDoctorFullName.getText())) {
+                        inputDoctorFullName.setError("Field is required!");
+                    } else if (TextUtils.isEmpty(inputDoctorClinicOrHospitalName.getText())) {
+                        inputDoctorClinicOrHospitalName.setError("Field is required!");
+                    } else if (TextUtils.isEmpty(inputDoctorClinicOrHospitalAddress.getText())) {
+                        inputDoctorClinicOrHospitalAddress.setError("Field is required!");
+                    } else if (TextUtils.isEmpty(inputDoctorCNIC.getText())) {
+                        inputDoctorCNIC.setError("Field is required!");
+                    } else if (!TextUtils.isEmpty(inputDoctorCNIC.getText()) && inputDoctorCNIC.length() != 13) {
+                        inputDoctorCNIC.setError("CNIC not valid!");
+                    } else {
 
-                MyFirebaseDatabase.USERS_REFERENCE.child(user.getPhoneNumber()).setValue(newUser).addOnCompleteListener(new OnCompleteListener<Void>() {
-                    @Override
-                    public void onComplete(@NonNull Task<Void> task) {
-                        if (task.isSuccessful())
-                            moveToHome();
+                        newUser = new User(
+                                user.getUid(),
+                                Constants.ACCOUNT_TYPE_DOCTOR,
+                                inputDoctorFullName.getText().toString().trim(),
+                                inputDoctorClinicOrHospitalName.getText().toString().trim(),
+                                inputDoctorClinicOrHospitalAddress.getText().toString().trim(),
+                                inputDoctorCNIC.getText().toString().trim()
+                        );
+
+
+                        MyFirebaseDatabase.USERS_REFERENCE.child(user.getPhoneNumber()).setValue(newUser).addOnCompleteListener(new OnCompleteListener<Void>() {
+                            @Override
+                            public void onComplete(@NonNull Task<Void> task) {
+                                if (task.isSuccessful())
+                                    moveToHome();
+                            }
+                        });
                     }
-                });
+                }
+                if (accountTypePatient.isChecked()) {
+
+                    if (TextUtils.isEmpty(inputPatientName.getText())) {
+                        inputPatientName.setError("Field is required!");
+                    } else if (TextUtils.isEmpty(inputPatientAge.getText())) {
+                        inputPatientAge.setError("Field is required!");
+                    } else if (TextUtils.isEmpty(inputPatientCity.getText())) {
+                        inputPatientCity.setError("Field is required!");
+                    } else {
+
+                        newUser = new User(
+                                user.getUid(),
+                                Constants.ACCOUNT_TYPE_PATIENT,
+                                inputPatientName.getText().toString().trim(),
+                                inputPatientAge.getText().toString().trim(),
+                                inputPatientCity.getText().toString().trim()
+                        );
+
+                        MyFirebaseDatabase.USERS_REFERENCE.child(user.getPhoneNumber()).setValue(newUser).addOnCompleteListener(new OnCompleteListener<Void>() {
+                            @Override
+                            public void onComplete(@NonNull Task<Void> task) {
+                                if (task.isSuccessful())
+                                    moveToHome();
+                            }
+                        });
+
+                    }
+                }
+
             }
         });
 

@@ -124,6 +124,7 @@
             android:textColorHint="@color/WHITE"
             android:textColor="@color/WHITE"
             android:inputType="number"
+            android:maxLength="3"
             android:drawableLeft="@drawable/ic_expiry_date_black_24dp"
             android:drawablePadding="5dp"/>
 

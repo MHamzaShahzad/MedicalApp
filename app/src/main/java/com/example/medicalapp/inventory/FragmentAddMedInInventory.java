@@ -203,16 +203,17 @@ public class FragmentAddMedInInventory extends Fragment implements View.OnClickL
     }
 
     private MedInventoryModel buildMedInstance() {
-        return new MedInventoryModel(
-                medName.getText().toString().trim(),
-                medDetail.getText().toString().trim(),
-                new SimpleDateFormat("dd MMM yyyy", Locale.ENGLISH).format(Calendar.getInstance().getTime()),
-                medExpiryDate.getText().toString().trim(),
-                spinnerMedType.getSelectedItem().toString(),
-                Integer.valueOf(medStock.getText().toString().trim()),
-                Integer.valueOf(medUserPerDay.getText().toString().trim()),
-                0
-        );
+
+            return new MedInventoryModel(
+                    medName.getText().toString().trim(),
+                    medDetail.getText().toString().trim(),
+                    new SimpleDateFormat("dd MMM yyyy", Locale.ENGLISH).format(Calendar.getInstance().getTime()),
+                    medExpiryDate.getText().toString().trim(),
+                    spinnerMedType.getSelectedItem().toString(),
+                    Integer.valueOf(medStock.getText().toString().trim()),
+                    Integer.valueOf(medUserPerDay.getText().toString().trim()),
+                    0
+            );
     }
 
     @Override
@@ -244,11 +245,31 @@ public class FragmentAddMedInInventory extends Fragment implements View.OnClickL
                 break;
 
             case R.id.btnSubmitMed:
-                boolean result = medInventoryDatabaseManagement.addMedicineDetails(MedInventoryDatabaseHelper.TABLE_MEDICINE_DETAILS, buildMedInstance());
-                if (result)
-                    ((FragmentActivity) context).getSupportFragmentManager().popBackStack();
-                else
-                    Snackbar.make(view, "Data could't be added!", Snackbar.LENGTH_LONG).show();
+
+                if (TextUtils.isEmpty(medName.getText())){
+                    medName.setError("Field is required");
+                }else if (TextUtils.isEmpty(medDetail.getText())){
+                    medDetail.setError("Field is required");
+
+                }else if (TextUtils.isEmpty(medExpiryDate.getText())){
+                    medExpiryDate.setError("Field is required");
+
+                }else if (TextUtils.isEmpty(medStock.getText())){
+                    medStock.setError("Field is required");
+
+                }else if (TextUtils.isEmpty(medUserPerDay.getText())){
+                    medUserPerDay.setError("Field is required");
+
+                }else {
+
+                    boolean result = medInventoryDatabaseManagement.addMedicineDetails(MedInventoryDatabaseHelper.TABLE_MEDICINE_DETAILS, buildMedInstance());
+                    if (result)
+                        ((FragmentActivity) context).getSupportFragmentManager().popBackStack();
+                    else
+                        Snackbar.make(view, "Data could't be added!", Snackbar.LENGTH_LONG).show();
+
+                }
+
                 break;
 
             case R.id.medExpiryDate:
