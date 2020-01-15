@@ -49,7 +49,8 @@
     <string name="all_medicine">All medicine</string>
     <string name="period_tracker">Period Tracker</string>
 
-    <string name="contact_us_detail">Medical Assistance\nis the solution for the emergency situations and provides valuable features that help to handle the emergency conditions and to communicate the doctor for the routine checkup.</string>
+    <string name="contact_us_detail">is the solution for the emergency situations and provides valuable features that help to handle the emergency conditions and to communicate the doctor for the routine checkup.</string>
+    <string name="contactus_detail">Medical Assistance is the solution for the emergency situations and provides valuable features that help to handle the emergency conditions and to communicate the doctor for the routine checkup.</string>
     <string name="about_us">Medical assistance provide ease to patient community.\nOur main aim is to provide maximum assistance to the patients in case of emergency.  </string>
     <string name="action_register_patient">Register Patient</string>
     <string name="action_patients_list">Patients List</string>
