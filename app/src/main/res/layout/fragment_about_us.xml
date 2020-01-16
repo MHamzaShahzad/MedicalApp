@@ -16,25 +16,13 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-            <TextView
-                android:id="@+id/txt_splash"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerHorizontal="true"
-                android:layout_marginTop="15dp"
-                android:fontFamily="sans-serif-condensed-medium"
-                android:text="@string/app_name"
-                android:textAlignment="center"
-                android:textColor="@color/WHITE"
-                android:textSize="30sp"
-                android:textStyle="bold" />
 
             <ImageView
                 android:id="@+id/splash_logo"
                 android:layout_width="match_parent"
                 android:layout_height="200dp"
-                android:src="@mipmap/main_app_icon"
-                android:layout_below="@id/txt_splash" />
+                android:src="@mipmap/logo"
+                android:layout_marginTop="15dp"/>
 
 
             <TextView
@@ -43,11 +31,11 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/splash_logo"
                 android:layout_centerHorizontal="true"
-                android:layout_marginTop="5dp"
-                android:text="Changing the way you receive healthcare."
+                android:layout_marginTop="10dp"
+                android:text="Changing the way you receive health care."
                 android:textAlignment="center"
                 android:textColor="@color/WHITE"
-                android:textSize="20sp"
+                android:textSize="18sp"
                 android:textStyle="bold" />
 
             <TextView
@@ -55,33 +43,25 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/tagline"
-                android:layout_marginTop="10dp"
-                android:textAlignment="center"
                 android:text="About us"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="8dp"
                 android:textColor="@color/WHITE"
                 android:textSize="21sp"
                 android:textStyle="bold" />
-            <View
-                android:id="@+id/view1"
-                android:layout_width="150dp"
-                android:layout_height="1dp"
-                android:layout_below="@id/heading"
-                android:layout_marginLeft="130dp"
-                android:layout_marginTop="3dp"
-                android:layout_marginRight="5dp"
-                android:background="@color/WHITE" />
 
             <TextView
                 android:id="@+id/about_us"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/view1"
+                android:layout_below="@+id/heading"
                 android:layout_marginLeft="8dp"
                 android:layout_marginTop="8dp"
                 android:layout_marginRight="8dp"
-                android:text="@string/contact_us_detail"
+                android:text="@string/contactus_detail"
                 android:textColor="@color/WHITE"
-                android:textSize="16sp" />
+                android:textSize="17sp" />
 
             <TextView
                 android:id="@+id/about_us_"
@@ -93,7 +73,7 @@
                 android:layout_marginRight="8dp"
                 android:text="@string/about_us"
                 android:textColor="@color/WHITE"
-                android:textSize="16sp" />
+                android:textSize="17sp" />
 
             <TextView
                 android:id="@+id/about_us_end"
