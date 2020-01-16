@@ -45,6 +45,7 @@ public class AdapterMyPatientsList extends RecyclerView.Adapter<AdapterMyPatient
         holder.patientAgePlace.setText(patient.getPatientAge());
         holder.patientRegisteredAtPlace.setText(patient.getPatientRegisteredAt());
         holder.patientPhonePlace.setText(patient.getPatientPhoneNumber());
+        holder.patientHealthProfilePlace.setText(patient.getPatientHealthProfile());
 
         holder.btnViewPrescriptions.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -76,7 +77,7 @@ public class AdapterMyPatientsList extends RecyclerView.Adapter<AdapterMyPatient
     public class Holder extends RecyclerView.ViewHolder {
 
         private Button btnViewPrescriptions, btnPrescribeMedicine;
-        private TextView patientNamePlace, patientAgePlace, patientRegisteredAtPlace, patientPhonePlace;
+        private TextView patientNamePlace, patientHealthProfilePlace, patientAgePlace, patientRegisteredAtPlace, patientPhonePlace;
 
         public Holder(@NonNull View itemView) {
             super(itemView);
@@ -85,6 +86,7 @@ public class AdapterMyPatientsList extends RecyclerView.Adapter<AdapterMyPatient
             btnViewPrescriptions = itemView.findViewById(R.id.btnViewPrescriptions);
 
             patientNamePlace = itemView.findViewById(R.id.patientNamePlace);
+            patientHealthProfilePlace = itemView.findViewById(R.id.patientHealthProfilePlace);
             patientAgePlace = itemView.findViewById(R.id.patientAgePlace);
             patientRegisteredAtPlace = itemView.findViewById(R.id.patientRegisteredAtPlace);
             patientPhonePlace = itemView.findViewById(R.id.patientPhonePlace);

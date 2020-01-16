@@ -16,24 +16,23 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:background="@color/colorPrimary">
+            android:background="@color/colorPrimary"
+            android:orientation="vertical">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                android:padding="5dp"
-                >
+                android:padding="5dp">
 
                 <TextView
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="0.4"
-                    android:text="Patient Name"
-                    android:textColor="@color/WHITE"
+                    android:drawableLeft="@drawable/ic_person_black_24dp"
                     android:drawablePadding="3dp"
-                    android:drawableLeft="@drawable/ic_person_black_24dp"/>
+                    android:text="Patient Name"
+                    android:textColor="@color/WHITE" />
 
                 <TextView
                     android:id="@+id/patientNamePlace"
@@ -41,7 +40,31 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="0.6"
                     android:text="Patient Name"
-                    android:textColor="@color/WHITE"/>
+                    android:textColor="@color/WHITE" />
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="5dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.4"
+                    android:drawableLeft="@drawable/ic_person_black_24dp"
+                    android:drawablePadding="3dp"
+                    android:text="Patient Health Profile / Disease"
+                    android:textColor="@color/WHITE" />
+
+                <TextView
+                    android:id="@+id/patientHealthProfilePlace"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.6"
+                    android:text="Patient Health"
+                    android:textColor="@color/WHITE" />
 
             </LinearLayout>
 
@@ -49,17 +72,16 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                android:padding="5dp"
-                >
+                android:padding="5dp">
 
                 <TextView
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="0.4"
-                    android:text="Patient Age"
-                    android:drawablePadding="3dp"
                     android:drawableLeft="@drawable/ic_expiry_date_black_24dp"
-                    android:textColor="@color/WHITE"/>
+                    android:drawablePadding="3dp"
+                    android:text="Patient Age"
+                    android:textColor="@color/WHITE" />
 
                 <TextView
                     android:id="@+id/patientAgePlace"
@@ -67,7 +89,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="0.6"
                     android:text="Patient Age"
-                    android:textColor="@color/WHITE"/>
+                    android:textColor="@color/WHITE" />
 
             </LinearLayout>
 
@@ -75,25 +97,24 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                android:padding="5dp"
-                >
+                android:padding="5dp">
 
                 <TextView
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="0.4"
-                    android:text="Reg. At"
-                    android:drawablePadding="3dp"
                     android:drawableLeft="@drawable/ic_location_on_black_24dp"
-                    android:textColor="@color/WHITE"/>
+                    android:drawablePadding="3dp"
+                    android:text="Reg. At"
+                    android:textColor="@color/WHITE" />
 
                 <TextView
                     android:id="@+id/patientRegisteredAtPlace"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="0.6"
-                    android:text="Patient Age"
-                    android:textColor="@color/WHITE"/>
+                    android:text="Reg At"
+                    android:textColor="@color/WHITE" />
 
             </LinearLayout>
 
@@ -101,17 +122,16 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                android:padding="5dp"
-                >
+                android:padding="5dp">
 
                 <TextView
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="0.4"
-                    android:text="Mobile Number"
-                    android:drawablePadding="3dp"
                     android:drawableLeft="@drawable/ic_phone_black_24dp"
-                    android:textColor="@color/WHITE"/>
+                    android:drawablePadding="3dp"
+                    android:text="Mobile Number"
+                    android:textColor="@color/WHITE" />
 
                 <TextView
                     android:id="@+id/patientPhonePlace"
@@ -119,7 +139,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="0.6"
                     android:text="Patient Mobile"
-                    android:textColor="@color/WHITE"/>
+                    android:textColor="@color/WHITE" />
 
             </LinearLayout>
 
@@ -127,33 +147,31 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                android:padding="5dp"
-                >
+                android:padding="5dp">
 
                 <Button
                     android:id="@+id/btnPrescribeMedicine"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
                     android:layout_weight="0.4"
+                    android:background="@color/lightBlue"
                     android:text="Prescribe Med"
                     android:textColor="@color/WHITE"
-                    android:textStyle="bold"
-                    android:background="@color/lightBlue"
-                    android:layout_margin="5dp"/>
+                    android:textStyle="bold" />
 
                 <Button
                     android:id="@+id/btnViewPrescriptions"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
                     android:layout_weight="0.6"
+                    android:background="@color/lightBlue"
                     android:text="View Prescription(s)"
                     android:textColor="@color/WHITE"
-                    android:textStyle="bold"
-                    android:background="@color/lightBlue"
-                    android:layout_margin="5dp"/>
+                    android:textStyle="bold" />
 
             </LinearLayout>
-
 
 
         </LinearLayout>
